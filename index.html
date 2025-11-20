@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
-    <title>ESL Survivors 2D</title>
+    <title>ICT Survivors 2D</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -235,7 +235,7 @@
         let lastShotTime = 0, gameLoopId;
         let chargeStartTime = 0, isCharging = false; // For charge shot
         let killStreak = 0; // For reinforcement system
-        let playerNickname = "ESL_Survivor"; // Kept default nickname
+        let playerNickname = "ICT_Survivor"; // Kept default nickname
         let isTouchDevice = false;
         let joystickTouchId = null;
         let joystickStart = { x: 0, y: 0 };
@@ -295,21 +295,21 @@
             bombCooldown: 10000, // 10 seconds
             lastBombTime: -10000 // Allow immediate use
         };
-        // --- NEW: Updated Enemies ---
+        // --- NEW: Updated Enemies (Flowchart Shapes) ---
         const enemyTypes = [
-            { id_key: "Drone", name: "Drone", size: 20, speed: 180, health: 40, xp: 10, shape: 'square', color: '#ff4444', damage: 5, maxHealth: 40 }, // Red square
-            { id_key: "Robot", name: "Robot", size: 50, speed: 40, health: 120, xp: 40, shape: 'rect', color: '#4488ff', damage: 10, maxHealth: 120 }, // Blue rect
-            { id_key: "Scout", name: "Scout", size: 15, speed: 220, health: 30, xp: 18, shape: 'square', color: '#ffff44', damage: 4, maxHealth: 30 }, // Yellow square
-            { id_key: "Swarm", name: "Swarm", size: 7, speed: 250, health: 10, xp: 15, shape: 'square', color: '#88ff88', damage: 1, maxHealth: 10 }, // Green square
-            { id_key: "Flyer", name: "Flyer", size: 12, speed: 280, health: 25, xp: 20, shape: 'circle', color: '#ff88ff', damage: 3, maxHealth: 25 }, // Pink circle
+            { id_key: "Drone", name: "Drone", size: 20, speed: 180, health: 40, xp: 10, shape: 'rectangle', color: '#ff4444', damage: 5, maxHealth: 40 }, // Red rectangle (process)
+            { id_key: "Robot", name: "Robot", size: 50, speed: 40, health: 120, xp: 40, shape: 'rectangle', color: '#4488ff', damage: 10, maxHealth: 120 }, // Blue rectangle (process)
+            { id_key: "Scout", name: "Scout", size: 15, speed: 220, health: 30, xp: 18, shape: 'diamond', color: '#ffff44', damage: 4, maxHealth: 30 }, // Yellow diamond (decision)
+            { id_key: "Swarm", name: "Swarm", size: 7, speed: 250, health: 10, xp: 15, shape: 'diamond', color: '#88ff88', damage: 1, maxHealth: 10 }, // Green diamond (decision)
+            { id_key: "Flyer", name: "Flyer", size: 12, speed: 280, health: 25, xp: 20, shape: 'oval', color: '#ff88ff', damage: 3, maxHealth: 25 }, // Pink oval (terminal)
             // NEW ENEMY TYPES
-            { id_key: "Tank", name: "Tank", size: 70, speed: 30, health: 300, xp: 60, shape: 'rect', color: '#666666', damage: 20, maxHealth: 300 }, // Gray tank - slow, heavy
-            { id_key: "Assassin", name: "Assassin", size: 18, speed: 350, health: 20, xp: 35, shape: 'square', color: '#8800ff', damage: 15, maxHealth: 20 }, // Purple assassin - fast, deadly
-            { id_key: "Healer", name: "Healer", size: 25, speed: 100, health: 60, xp: 50, shape: 'circle', color: '#00ff88', damage: 2, maxHealth: 60, isHealer: true, healCooldown: 2000, lastHealTime: 0, healAmount: 15, healRadius: 150 }, // Green healer
-            { id_key: "Splitter", name: "Splitter", size: 30, speed: 120, health: 80, xp: 45, shape: 'square', color: '#ff8800', damage: 8, maxHealth: 80, isSplitter: true }, // Orange splitter
-            { id_key: "Bomber", name: "Bomber", size: 22, speed: 200, health: 35, xp: 30, shape: 'circle', color: '#ff0088', damage: 25, maxHealth: 35, isBomber: true, explosionRadius: 80, explosionDamage: 30 }, // Hot pink bomber
+            { id_key: "Tank", name: "Tank", size: 70, speed: 30, health: 300, xp: 60, shape: 'rectangle', color: '#666666', damage: 20, maxHealth: 300 }, // Gray rectangle (process) - slow, heavy
+            { id_key: "Assassin", name: "Assassin", size: 18, speed: 350, health: 20, xp: 35, shape: 'parallelogram', color: '#8800ff', damage: 15, maxHealth: 20 }, // Purple parallelogram (input/output) - fast, deadly
+            { id_key: "Healer", name: "Healer", size: 25, speed: 100, health: 60, xp: 50, shape: 'oval', color: '#00ff88', damage: 2, maxHealth: 60, isHealer: true, healCooldown: 2000, lastHealTime: 0, healAmount: 15, healRadius: 150 }, // Green oval (terminal)
+            { id_key: "Splitter", name: "Splitter", size: 30, speed: 120, health: 80, xp: 45, shape: 'trapezoid', color: '#ff8800', damage: 8, maxHealth: 80, isSplitter: true }, // Orange trapezoid (manual operation)
+            { id_key: "Bomber", name: "Bomber", size: 22, speed: 200, health: 35, xp: 30, shape: 'diamond', color: '#ff0088', damage: 25, maxHealth: 35, isBomber: true, explosionRadius: 80, explosionDamage: 30 }, // Hot pink diamond (decision)
         ];
-        const bossType = { id_key: "Boss", name: "Boss", size: 80, speed: 90, health: 900, xp: 2000, shape: 'rect', color: '#ff0000', damage: 250, maxHealth: 500, isBoss: true, shootCooldown: 200, lastShotTime: 0, isMultipart: true }; // Large red multipart boss
+        const bossType = { id_key: "Boss", name: "Boss", size: 80, speed: 90, health: 900, xp: 2000, shape: 'hexagon', color: '#ff0000', damage: 250, maxHealth: 500, isBoss: true, shootCooldown: 200, lastShotTime: 0, isMultipart: true }; // Large red hexagon boss
         // --- NEW: Insane Powerups ---
         const powerUpTypes = {
             'HEALTH': { name: "Health Pack", description: "+50 Max HP", apply: (p) => { p.maxHealth += 50; p.health = Math.min(p.maxHealth, p.health + 50); } },
@@ -335,306 +335,47 @@
             'RAGE_MODE': { name: "Berserker Rage", description: "10s mega boost at low HP", apply: (p) => p.hasRageMode = true }
         };
 
+        // --- ICT Question Bank from XML ---
+        const ictQuestions = [
+            { q: "What is the collective term for all websites and web pages available online through the internet?", a: ["Uniform Resource Locator", "Domain Name Server", "World Wide Web", "Hypertext Transfer Protocol"], c: 2 },
+            { q: "What is defined as a huge infrastructure used by homes, businesses, and institutions worldwide to connect to each other?", a: ["The World Wide Web", "The internet", "A Web Server", "A Local Area Network"], c: 1 },
+            { q: "Which component is NOT one of the three main components of a URL?", a: ["Protocol", "Domain name", "Web page or file name", "IP Address"], c: 3 },
+            { q: "What is the specialized server that stores domain names along with their equivalent IP addresses?", a: ["Web Server", "Proxy Server", "Certificate Authority", "Domain Name Server (DNS)"], c: 3 },
+            { q: "What is the protocol used for the transmission of web pages and related data across the internet?", a: ["HTML", "CSS", "HTTP", "SSL"], c: 2 },
+            { q: "What is HTTPS?", a: ["Hypertext Template Transmission Service", "A secure version of HTTP that encrypts data for transmission", "A scripting language for web page interaction", "A protocol for searching data"], c: 1 },
+            { q: "What is the software application that allows access to information available on the World Wide Web?", a: ["Search engine", "DNS", "Web server", "Web browser"], c: 3 },
+            { q: "What protocol encrypts data for transmission and is combined with HTTP to create HTTPS?", a: ["TLS", "SSL (Secure Sockets Layer)", "DNS", "TCP/IP"], c: 1 },
+            { q: "What are small text files used to store data about your frequent online activities?", a: ["Data packets", "Active scripts", "Cookies", "Digital ledgers"], c: 2 },
+            { q: "What type of cookie is deleted when the web browser is closed?", a: ["Persistent cookies", "Targeted cookies", "Session cookies", "Temporary cookies"], c: 2 },
+            { q: "What is the decentralized system that tracks all transactions for cryptocurrency?", a: ["Digital Ledger", "Proxy Server", "Blockchain", "Domain Name Server"], c: 2 },
+            { q: "What is the practice of defending computers, servers, networks, and data from malicious attacks?", a: ["Social engineering", "Hacking", "Data interception", "Cyber security"], c: 3 },
+            { q: "What software is used to examine data packets as they are sent across a network or the internet for the purpose of interception?", a: ["Anti-malware", "Botnet", "Packet sniffer", "Firewall"], c: 2 },
+            { q: "What does DDoS stand for?", a: ["Data Definition of Service", "Digital Distribution of Systems", "Decentralized Denial of Service", "Distributed Denial of Service"], c: 3 },
+            { q: "What is the general term used to describe any malicious software designed to disrupt your computer or data?", a: ["Botnet", "Hacker", "Malware", "Digital certificate"], c: 2 },
+            { q: "What malware encrypts data and stops the user from accessing it, demanding money to decrypt it?", a: ["Trojan horse", "Adware", "Worm", "Ransomware"], c: 3 },
+            { q: "What is phishing?", a: ["Manipulating employees into providing key information", "Encrypting user data and demanding a ransom", "Sending a user a fake email designed to look genuine, encouraging data submission", "Redirecting website requests to a malicious site"], c: 2 },
+            { q: "What is the definition of the Program Development Life Cycle (PDLC)?", a: ["The process of testing a system using abnormal data", "The writing of a program using programming languages", "A series of structured steps/activities followed to produce a system", "A diagrammatic representation of an algorithm"], c: 2 },
+            { q: "What term refers to taking a system and splitting it into smaller sub-systems?", a: ["Verification", "Validation", "Decomposition", "Coding"], c: 2 },
+            { q: "What is a diagrammatic representation of an algorithm?", a: ["Pseudocode", "Structure diagram", "Flowchart", "Trace table"], c: 2 },
+            { q: "Which type of test data is data that a program *should not* accept?", a: ["Normal test data", "Extreme test data", "Abnormal test data", "Boundary test data"], c: 2 },
+            { q: "What is a series of steps that searches for a specific value in a set of data?", a: ["Sorting algorithm", "Bubble sort", "Search algorithm", "Validation check"], c: 2 },
+            { q: "What is the process of checking that data entered is reasonable and within bounds?", a: ["Verification", "Validation", "Trace table entry", "Linear search"], c: 1 },
+            { q: "Which verification method requires two different people to enter the same data?", a: ["Visual check", "Range check", "Double-entry check", "Presence check"], c: 2 },
+            { q: "What search algorithm visits each item of data in turn to check whether it is the data being looked for?", a: ["Bubble sort", "Binary search", "Linear search", "Minimum search"], c: 2 },
+            { q: "What sorting algorithm moves through the list repeatedly swapping values in pairs?", a: ["Linear search", "Bubble sort", "Maximum sort", "Verification sort"], c: 1 },
+            { q: "What type of validation assesses whether data is within one or two bounds?", a: ["Length check", "Type check", "Range check", "Presence check"], c: 2 },
+            { q: "What is the smallest value within a set?", a: ["Average", "Maximum", "Minimum", "Total"], c: 2 },
+            { q: "What validation check ensures that some data has been entered?", a: ["Length check", "Range check", "Presence check", "Format check"], c: 2 },
+            { q: "What is calculated from a set of numbers and is input with the numbers for validation purposes?", a: ["Check sum", "Check digit", "Control total", "Digital certificate"], c: 1 }
+        ];
+
         // --- Question Generator ---
         const questionGenerator = {
-            verbBank: [
-                { base: 'go', past: 'went', ing: 'going', pastParticiple: 'gone', object: 'to the store' },
-                { base: 'eat', past: 'ate', ing: 'eating', pastParticiple: 'eaten', object: 'a large pizza' },
-                { base: 'sleep', past: 'slept', ing: 'sleeping', pastParticiple: 'slept', object: 'for ten hours' },
-                { base: 'watch', past: 'watched', ing: 'watching', pastParticiple: 'watched', object: 'a movie' },
-                { base: 'study', past: 'studied', ing: 'studying', pastParticiple: 'studied', object: 'for the test' },
-                { base: 'play', past: 'played', ing: 'playing', pastParticiple: 'played', object: 'video games' },
-                { base: 'read', past: 'read', ing: 'reading', pastParticiple: 'read', object: 'a good book' },
-                { base: 'write', past: 'wrote', ing: 'writing', pastParticiple: 'written', object: 'a letter' },
-                { base: 'run', past: 'ran', ing: 'running', pastParticiple: 'run', object: 'a marathon' },
-                { base: 'see', past: 'saw', ing: 'seeing', pastParticiple: 'seen', object: 'a concert' },
-                { base: 'buy', past: 'bought', ing: 'buying', pastParticiple: 'bought', object: 'new shoes' },
-                { base: 'make', past: 'made', ing: 'making', pastParticiple: 'made', object: 'a cake' },
-                { base: 'take', past: 'took', ing: 'taking', pastParticiple: 'taken', object: 'the bus' },
-                { base: 'find', past: 'found', ing: 'finding', pastParticiple: 'found', object: 'the keys' },
-                { base: 'give', past: 'gave', ing: 'giving', pastParticiple: 'given', object: 'a gift' },
-                { base: 'speak', past: 'spoke', ing: 'speaking', pastParticiple: 'spoken', object: 'English' },
-                { base: 'drink', past: 'drank', ing: 'drinking', pastParticiple: 'drunk', object: 'coffee' },
-                { base: 'swim', past: 'swam', ing: 'swimming', pastParticiple: 'swum', object: 'in the pool' },
-                { base: 'sing', past: 'sang', ing: 'singing', pastParticiple: 'sung', object: 'a song' },
-                { base: 'begin', past: 'began', ing: 'beginning', pastParticiple: 'begun', object: 'the project' },
-                { base: 'break', past: 'broke', ing: 'breaking', pastParticiple: 'broken', object: 'the vase' },
-                { base: 'choose', past: 'chose', ing: 'choosing', pastParticiple: 'chosen', object: 'a winner' },
-                { base: 'drive', past: 'drove', ing: 'driving', pastParticiple: 'driven', object: 'to work' },
-                { base: 'fly', past: 'flew', ing: 'flying', pastParticiple: 'flown', object: 'to Paris' },
-                { base: 'know', past: 'knew', ing: 'knowing', pastParticiple: 'known', object: 'the answer' },
-            ],
-            subjects: [
-                { s: 'I', was: 'was', were: 'was' },
-                { s: 'You', was: 'were', were: 'were' },
-                { s: 'He', was: 'was', were: 'was' },
-                { s: 'She', was: 'was', were: 'was' },
-                { s: 'It', was: 'was', were: 'was' },
-                { s: 'We', was: 'were', were: 'were' },
-                { s: 'They', was: 'were', were: 'were' }
-            ],
-            timeClauses: [
-                'yesterday', 'last night', 'at 8 PM', 'two days ago', 'last week', 'on Monday'
-            ],
-            conjunctions: [
-                { conj: 'and', meaning: 'addition' },
-                { conj: 'but', meaning: 'contrast' },
-                { conj: 'because', meaning: 'reason' },
-                { conj: 'so', meaning: 'result' },
-                { conj: 'or', meaning: 'choice' },
-                { conj: 'although', meaning: 'contrast' },
-                { conj: 'when', meaning: 'time' },
-                { conj: 'while', meaning: 'time' }
-            ],
-            sentencePairs: [
-                { s1: 'I studied hard', s2: 'I passed the test', conjunction: 'so' },
-                { s1: 'She was tired', s2: 'she went to bed early', conjunction: 'so' },
-                { s1: 'I wanted to go out', s2: 'it was raining', conjunction: 'but' },
-                { s1: 'He likes pizza', s2: 'his sister prefers pasta', conjunction: 'but' },
-                { s1: 'They went home', s2: 'they were tired', conjunction: 'because' },
-                { s1: 'We stayed inside', s2: 'it was cold', conjunction: 'because' },
-                { s1: 'I was reading a book', s2: 'my brother was playing games', conjunction: 'while' },
-                { s1: 'She was cooking dinner', s2: 'he was watching TV', conjunction: 'while' }
-            ],
-            modalVerbs: [
-                { modal: 'can', meaning: 'ability', example: 'swim' },
-                { modal: 'could', meaning: 'past ability', example: 'play piano' },
-                { modal: 'should', meaning: 'advice', example: 'study harder' },
-                { modal: 'must', meaning: 'obligation', example: 'finish homework' },
-                { modal: 'may', meaning: 'possibility', example: 'rain tomorrow' },
-                { modal: 'might', meaning: 'weak possibility', example: 'be late' },
-                { modal: 'would', meaning: 'conditional', example: 'help you' },
-                { modal: 'will', meaning: 'future', example: 'arrive soon' }
-            ],
-            prepositions: [
-                { prep: 'in', context: 'the morning', type: 'time' },
-                { prep: 'on', context: 'Monday', type: 'time' },
-                { prep: 'at', context: '3 PM', type: 'time' },
-                { prep: 'in', context: 'New York', type: 'place' },
-                { prep: 'on', context: 'the table', type: 'place' },
-                { prep: 'at', context: 'the station', type: 'place' },
-                { prep: 'by', context: 'car', type: 'method' },
-                { prep: 'with', context: 'my friends', type: 'accompaniment' },
-                { prep: 'for', context: 'three hours', type: 'duration' },
-                { prep: 'since', context: '2020', type: 'time point' }
-            ],
-            passiveObjects: [
-                { active: 'John wrote', object: 'the letter', passive: 'was written by' },
-                { active: 'They built', object: 'the house', passive: 'was built by' },
-                { active: 'She painted', object: 'the picture', passive: 'was painted by' },
-                { active: 'The chef cooked', object: 'the meal', passive: 'was cooked by' },
-                { active: 'Someone stole', object: 'my bike', passive: 'was stolen by' },
-                { active: 'The company hired', object: 'new workers', passive: 'were hired by' }
-            ],
-            conditionals: [
-                { condition: 'it rains', result: 'we will stay home', type: 'first' },
-                { condition: 'I had money', result: 'I would buy a car', type: 'second' },
-                { condition: 'she studies', result: 'she will pass', type: 'first' },
-                { condition: 'he were rich', result: 'he would travel', type: 'second' },
-                { condition: 'you heat ice', result: 'it melts', type: 'zero' },
-                { condition: 'I were you', result: 'I would apologize', type: 'second' }
-            ],
             getRandom(arr) { return arr[Math.floor(Math.random() * arr.length)]; },
-            shuffle(arr) {
-                let newArr = [...arr];
-                for (let i = newArr.length - 1; i > 0; i--) {
-                    const j = Math.floor(Math.random() * (i + 1));
-                    [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
-                }
-                return newArr;
-            },
-            
-            // Past Simple Fill-in-the-blank
-            createPastSimpleFill() {
-                const verb = this.getRandom(this.verbBank);
-                const subject = this.getRandom(this.subjects).s;
-                const time = this.getRandom(this.timeClauses);
-
-                // Create a grammatically correct sentence
-                const q = `${subject} [___] ${verb.object} ${time}.`;
-
-                // Ensure 'read' (past) and 'read' (base) are handled if they appear
-                let distractors = [verb.base, verb.ing, verb.base + 's'];
-                if (verb.base === 'read') {
-                     distractors = [verb.ing, 'reads', 'readingg']; // 'read' base is same as past, provide specific distractors
-                }
-
-                // Get 4 unique options, ensuring the correct answer is present
-                let answers = [verb.past, ...distractors];
-                answers = answers.filter((v, i, a) => a.indexOf(v) === i); // Filter for unique
-                while (answers.length < 4) {
-                    answers.push(`verb${answers.length}`); // Add dummy distractors if needed
-                }
-                answers = answers.slice(0, 4); // Take first 4
-
-                // FIX: Shuffle *once* and use that result for both 'a' and 'c'
-                const shuffledAnswers = this.shuffle(answers);
-                return { q, a: shuffledAnswers, c: shuffledAnswers.indexOf(verb.past) };
-            },
-
-            // Past Continuous Fill-in-the-blank
-            createPastContinuousFill() {
-                const verb = this.getRandom(this.verbBank);
-                const subject = this.getRandom(this.subjects);
-                const time = this.getRandom(this.timeClauses);
-
-                // Create a grammatically correct sentence: "Subject was/were [___] object time."
-                const q = `${subject.s} ${subject.was} [___] ${verb.object} ${time}.`;
-
-                // Correct answer is the -ing form
-                const correctAnswer = verb.ing;
-
-                // Create distractors
-                let distractors = [verb.past, verb.base, verb.base + 's'];
-
-                // Get 4 unique options
-                let answers = [correctAnswer, ...distractors];
-                answers = answers.filter((v, i, a) => a.indexOf(v) === i); // Filter for unique
-                while (answers.length < 4) {
-                    answers.push(`verb${answers.length}`); // Add dummy distractors if needed
-                }
-                answers = answers.slice(0, 4); // Take first 4
-
-                const shuffledAnswers = this.shuffle(answers);
-                return { q, a: shuffledAnswers, c: shuffledAnswers.indexOf(correctAnswer) };
-            },
-
-            // Conjunction Fill-in-the-blank
-            createConjunctionFill() {
-                const pair = this.getRandom(this.sentencePairs);
-                const correctAnswer = pair.conjunction;
-
-                // Create the question with blank
-                const q = `${pair.s1}, [___] ${pair.s2}.`;
-
-                // Create distractors from other conjunctions
-                let distractors = this.conjunctions
-                    .map(c => c.conj)
-                    .filter(c => c !== correctAnswer)
-                    .sort(() => Math.random() - 0.5)
-                    .slice(0, 3);
-
-                // Get 4 unique options
-                let answers = [correctAnswer, ...distractors];
-                answers = answers.filter((v, i, a) => a.indexOf(v) === i); // Filter for unique
-                while (answers.length < 4) {
-                    const extraConj = this.getRandom(this.conjunctions).conj;
-                    if (!answers.includes(extraConj)) {
-                        answers.push(extraConj);
-                    }
-                }
-                answers = answers.slice(0, 4); // Take first 4
-
-                const shuffledAnswers = this.shuffle(answers);
-                return { q, a: shuffledAnswers, c: shuffledAnswers.indexOf(correctAnswer) };
-            },
-
-            // Present Perfect Fill-in-the-blank
-            createPresentPerfectFill() {
-                const verb = this.getRandom(this.verbBank);
-                const subject = this.getRandom(this.subjects).s;
-                const hasHave = ['I', 'You', 'We', 'They'].includes(subject) ? 'have' : 'has';
-
-                const q = `${subject} ${hasHave} [___] ${verb.object}.`;
-                const correctAnswer = verb.pastParticiple;
-
-                let distractors = [verb.past, verb.base, verb.ing];
-                let answers = [correctAnswer, ...distractors];
-                answers = answers.filter((v, i, a) => a.indexOf(v) === i);
-                while (answers.length < 4) answers.push(`verb${answers.length}`);
-                answers = answers.slice(0, 4);
-
-                const shuffledAnswers = this.shuffle(answers);
-                return { q, a: shuffledAnswers, c: shuffledAnswers.indexOf(correctAnswer) };
-            },
-
-            // Modal Verb Fill-in-the-blank
-            createModalVerbFill() {
-                const modal = this.getRandom(this.modalVerbs);
-                const subject = this.getRandom(['I', 'You', 'He', 'She', 'We', 'They']);
-
-                const q = `${subject} [___] ${modal.example}.`;
-                const correctAnswer = modal.modal;
-
-                let distractors = this.modalVerbs
-                    .map(m => m.modal)
-                    .filter(m => m !== correctAnswer)
-                    .sort(() => Math.random() - 0.5)
-                    .slice(0, 3);
-
-                let answers = [correctAnswer, ...distractors].slice(0, 4);
-                const shuffledAnswers = this.shuffle(answers);
-                return { q, a: shuffledAnswers, c: shuffledAnswers.indexOf(correctAnswer) };
-            },
-
-            // Preposition Fill-in-the-blank
-            createPrepositionFill() {
-                const prep = this.getRandom(this.prepositions);
-                const q = `I will meet you [___] ${prep.context}.`;
-                const correctAnswer = prep.prep;
-
-                let distractors = this.prepositions
-                    .map(p => p.prep)
-                    .filter(p => p !== correctAnswer)
-                    .sort(() => Math.random() - 0.5)
-                    .slice(0, 3);
-
-                let answers = [correctAnswer, ...distractors];
-                answers = answers.filter((v, i, a) => a.indexOf(v) === i);
-                while (answers.length < 4) {
-                    const extra = this.getRandom(this.prepositions).prep;
-                    if (!answers.includes(extra)) answers.push(extra);
-                }
-                answers = answers.slice(0, 4);
-
-                const shuffledAnswers = this.shuffle(answers);
-                return { q, a: shuffledAnswers, c: shuffledAnswers.indexOf(correctAnswer) };
-            },
-
-            // Passive Voice Fill-in-the-blank
-            createPassiveVoiceFill() {
-                const passive = this.getRandom(this.passiveObjects);
-                const q = `${passive.object} [___] ${passive.active.toLowerCase().split(' ')[0]}.`;
-                const correctAnswer = passive.passive;
-
-                const distractors = ['is written by', 'wrote by', 'writing by'];
-                let answers = [correctAnswer, ...distractors];
-                answers = answers.filter((v, i, a) => a.indexOf(v) === i).slice(0, 4);
-
-                const shuffledAnswers = this.shuffle(answers);
-                return { q, a: shuffledAnswers, c: shuffledAnswers.indexOf(correctAnswer) };
-            },
-
-            // Conditional Fill-in-the-blank
-            createConditionalFill() {
-                const cond = this.getRandom(this.conditionals);
-                const q = `If ${cond.condition}, [___].`;
-                const correctAnswer = cond.result;
-
-                const distractors = this.conditionals
-                    .filter(c => c !== cond)
-                    .map(c => c.result)
-                    .slice(0, 3);
-
-                let answers = [correctAnswer, ...distractors].slice(0, 4);
-                const shuffledAnswers = this.shuffle(answers);
-                return { q, a: shuffledAnswers, c: shuffledAnswers.indexOf(correctAnswer) };
-            },
 
             generate() {
-                // Randomly select one of the EIGHT question types
-                const questionTypes = [
-                    this.createPastSimpleFill,
-                    this.createPastContinuousFill,
-                    this.createConjunctionFill,
-                    this.createPresentPerfectFill,
-                    this.createModalVerbFill,
-                    this.createPrepositionFill,
-                    this.createPassiveVoiceFill,
-                    this.createConditionalFill
-                ];
-                const randomType = this.getRandom(questionTypes);
-                return randomType.call(this);
+                // Return a random ICT question from the bank
+                return this.getRandom(ictQuestions);
             }
         };
 
@@ -1775,27 +1516,16 @@
              if (e.stunned && e.stunnedUntil > Date.now()) {
                  ctx.strokeStyle = '#00ffff';
                  ctx.lineWidth = 3;
-                 if (e.shape === 'rect') {
-                    ctx.strokeRect(e.x - e.size / 2, e.y - e.size * 0.75, e.size, e.size * 1.5);
-                 } else if (e.shape === 'circle') {
-                    ctx.beginPath();
-                    ctx.arc(e.x, e.y, e.size / 2, 0, Math.PI * 2);
-                    ctx.stroke();
-                 } else {
-                    ctx.strokeRect(e.x - e.size / 2, e.y - e.size / 2, e.size, e.size);
-                 }
+                 ctx.beginPath();
+                 drawEnemyShape(e, true); // Draw outline only
+                 ctx.stroke();
              }
 
-             ctx.fillStyle = e.color; // Use enemy's color
-             if (e.shape === 'rect') {
-                ctx.fillRect(e.x - e.size / 2, e.y - e.size * 0.75, e.size, e.size * 1.5); // Draw rect
-             } else if (e.shape === 'circle') {
-                ctx.beginPath();
-                ctx.arc(e.x, e.y, e.size / 2, 0, Math.PI * 2);
-                ctx.fill();
-             } else {
-                ctx.fillRect(e.x - e.size / 2, e.y - e.size / 2, e.size, e.size); // Default to square
-             }
+             // Draw enemy shape
+             ctx.fillStyle = e.color;
+             ctx.beginPath();
+             drawEnemyShape(e, false);
+             ctx.fill();
 
              // Draw health bar
              if (e.health < e.maxHealth) {
@@ -1807,6 +1537,68 @@
                  ctx.fillRect(barX, barY, barWidth, barHeight);
                  ctx.fillStyle = 'green';
                  ctx.fillRect(barX, barY, barWidth * (e.health / e.maxHealth), barHeight);
+             }
+        }
+
+        function drawEnemyShape(e, outlineOnly) {
+             const s = e.size;
+             const x = e.x;
+             const y = e.y;
+
+             if (e.shape === 'rectangle' || e.shape === 'rect') {
+                 // Rectangle (Process box)
+                 if (outlineOnly) {
+                     ctx.rect(x - s/2, y - s/2, s, s);
+                 } else {
+                     ctx.rect(x - s/2, y - s/2, s, s);
+                 }
+             } else if (e.shape === 'diamond') {
+                 // Diamond (Decision)
+                 ctx.moveTo(x, y - s/2);
+                 ctx.lineTo(x + s/2, y);
+                 ctx.lineTo(x, y + s/2);
+                 ctx.lineTo(x - s/2, y);
+                 ctx.closePath();
+             } else if (e.shape === 'oval') {
+                 // Oval (Terminal)
+                 ctx.ellipse(x, y, s/2, s/3, 0, 0, Math.PI * 2);
+             } else if (e.shape === 'parallelogram') {
+                 // Parallelogram (Input/Output)
+                 const offset = s * 0.3;
+                 ctx.moveTo(x - s/2 + offset, y - s/2);
+                 ctx.lineTo(x + s/2 + offset, y - s/2);
+                 ctx.lineTo(x + s/2 - offset, y + s/2);
+                 ctx.lineTo(x - s/2 - offset, y + s/2);
+                 ctx.closePath();
+             } else if (e.shape === 'trapezoid') {
+                 // Trapezoid (Manual Operation)
+                 const topWidth = s * 0.8;
+                 ctx.moveTo(x - topWidth/2, y - s/2);
+                 ctx.lineTo(x + topWidth/2, y - s/2);
+                 ctx.lineTo(x + s/2, y + s/2);
+                 ctx.lineTo(x - s/2, y + s/2);
+                 ctx.closePath();
+             } else if (e.shape === 'hexagon') {
+                 // Hexagon (for boss)
+                 const radius = s / 2;
+                 for (let i = 0; i < 6; i++) {
+                     const angle = (Math.PI / 3) * i;
+                     const px = x + radius * Math.cos(angle);
+                     const py = y + radius * Math.sin(angle);
+                     if (i === 0) ctx.moveTo(px, py);
+                     else ctx.lineTo(px, py);
+                 }
+                 ctx.closePath();
+             } else if (e.shape === 'circle') {
+                 // Circle (fallback)
+                 ctx.arc(x, y, s/2, 0, Math.PI * 2);
+             } else {
+                 // Default to square
+                 if (outlineOnly) {
+                     ctx.rect(x - s/2, y - s/2, s, s);
+                 } else {
+                     ctx.rect(x - s/2, y - s/2, s, s);
+                 }
              }
         }
 
