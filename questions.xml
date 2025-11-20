@@ -1,0 +1,336 @@
+This XML list provides a conversion of a comprehensive selection of the 150 multiple-choice questions generated previously, structured to include the question text, options, correct answer, and the source excerpt used to create the question.
+
+```xml
+<question_list>
+    <question id="1">
+        <text>What is the collective term for all websites and web pages available online through the internet?</text>
+        <options>
+            <option label="A">Uniform Resource Locator</option>
+            <option label="B">Domain Name Server</option>
+            <option label="C">World Wide Web</option>
+            <option label="D">Hypertext Transfer Protocol</option>
+        </options>
+        <answer>C</answer>
+        <source_basis></source_basis>
+    </question>
+    <question id="2">
+        <text>What is defined as a huge infrastructure used by homes, businesses, and institutions worldwide to connect to each other?</text>
+        <options>
+            <option label="A">The World Wide Web</option>
+            <option label="B">The internet</option>
+            <option label="C">A Web Server</option>
+            <option label="D">A Local Area Network</option>
+        </options>
+        <answer>B</answer>
+        <source_basis></source_basis>
+    </question>
+    <question id="3">
+        <text>Which component is NOT one of the three main components of a URL?</text>
+        <options>
+            <option label="A">Protocol</option>
+            <option label="B">Domain name</option>
+            <option label="C">Web page or file name</option>
+            <option label="D">IP Address</option>
+        </options>
+        <answer>D</answer>
+        <source_basis></source_basis>
+    </question>
+    <question id="4">
+        <text>What is the specialized server that stores domain names along with their equivalent IP addresses?</text>
+        <options>
+            <option label="A">Web Server</option>
+            <option label="B">Proxy Server</option>
+            <option label="C">Certificate Authority</option>
+            <option label="D">Domain Name Server (DNS)</option>
+        </options>
+        <answer>D</answer>
+        <source_basis></source_basis>
+    </question>
+    <question id="5">
+        <text>What is the protocol used for the transmission of web pages and related data across the internet?</text>
+        <options>
+            <option label="A">HTML</option>
+            <option label="B">CSS</option>
+            <option label="C">HTTP</option>
+            <option label="D">SSL</option>
+        </options>
+        <answer>C</answer>
+        <source_basis></source_basis>
+    </question>
+    <question id="6">
+        <text>What is HTTPS?</text>
+        <options>
+            <option label="A">Hypertext Template Transmission Service</option>
+            <option label="B">A secure version of HTTP that encrypts data for transmission</option>
+            <option label="C">A scripting language for web page interaction</option>
+            <option label="D">A protocol for searching data</option>
+        </options>
+        <answer>B</answer>
+        <source_basis></source_basis>
+    </question>
+    <question id="7">
+        <text>What is the software application that allows access to information available on the World Wide Web?</text>
+        <options>
+            <option label="A">Search engine</option>
+            <option label="B">DNS</option>
+            <option label="C">Web server</option>
+            <option label="D">Web browser</option>
+        </options>
+        <answer>D</answer>
+        <source_basis></source_basis>
+    </question>
+    <question id="8">
+        <text>What protocol encrypts data for transmission and is combined with HTTP to create HTTPS?</text>
+        <options>
+            <option label="A">TLS</option>
+            <option label="B">SSL (Secure Sockets Layer)</option>
+            <option label="C">DNS</option>
+            <option label="D">TCP/IP</option>
+        </options>
+        <answer>B</answer>
+        <source_basis></source_basis>
+    </question>
+    <question id="9">
+        <text>What are small text files used to store data about your frequent online activities?</text>
+        <options>
+            <option label="A">Data packets</option>
+            <option label="B">Active scripts</option>
+            <option label="C">Cookies</option>
+            <option label="D">Digital ledgers</option>
+        </options>
+        <answer>C</answer>
+        <source_basis></source_basis>
+    </question>
+    <question id="10">
+        <text>What type of cookie is deleted when the web browser is closed?</text>
+        <options>
+            <option label="A">Persistent cookies</option>
+            <option label="B">Targeted cookies</option>
+            <option label="C">Session cookies</option>
+            <option label="D">Temporary cookies</option>
+        </options>
+        <answer>C</answer>
+        <source_basis></source_basis>
+    </question>
+    <question id="11">
+        <text>What is the decentralized system that tracks all transactions for cryptocurrency?</text>
+        <options>
+            <option label="A">Digital Ledger</option>
+            <option label="B">Proxy Server</option>
+            <option label="C">Blockchain</option>
+            <option label="D">Domain Name Server</option>
+        </options>
+        <answer>C</answer>
+        <source_basis></source_basis>
+    </question>
+    <question id="12">
+        <text>What is the practice of defending computers, servers, networks, and data from malicious attacks?</text>
+        <options>
+            <option label="A">Social engineering</option>
+            <option label="B">Hacking</option>
+            <option label="C">Data interception</option>
+            <option label="D">Cyber security</option>
+        </options>
+        <answer>D</answer>
+        <source_basis></source_basis>
+    </question>
+    <question id="13">
+        <text>What software is used to examine data packets as they are sent across a network or the internet for the purpose of interception?</text>
+        <options>
+            <option label="A">Anti-malware</option>
+            <option label="B">Botnet</option>
+            <option label="C">Packet sniffer</option>
+            <option label="D">Firewall</option>
+        </options>
+        <answer>C</answer>
+        <source_basis></source_basis>
+    </question>
+    <question id="14">
+        <text>What does DDoS stand for?</text>
+        <options>
+            <option label="A">Data Definition of Service</option>
+            <option label="B">Digital Distribution of Systems</option>
+            <option label="C">Decentralized Denial of Service</option>
+            <option label="D">Distributed Denial of Service</option>
+        </options>
+        <answer>D</answer>
+        <source_basis></source_basis>
+    </question>
+    <question id="15">
+        <text>What is the general term used to describe any malicious software designed to disrupt your computer or data?</text>
+        <options>
+            <option label="A">Botnet</option>
+            <option label="B">Hacker</option>
+            <option label="C">Malware</option>
+            <option label="D">Digital certificate</option>
+        </options>
+        <answer>C</answer>
+        <source_basis></source_basis>
+    </question>
+    <question id="16">
+        <text>What malware encrypts data and stops the user from accessing it, demanding money to decrypt it?</text>
+        <options>
+            <option label="A">Trojan horse</option>
+            <option label="B">Adware</option>
+            <option label="C">Worm</option>
+            <option label="D">Ransomware</option>
+        </options>
+        <answer>D</answer>
+        <source_basis></source_basis>
+    </question>
+    <question id="17">
+        <text>What is phishing?</text>
+        <options>
+            <option label="A">Manipulating employees into providing key information</option>
+            <option label="B">Encrypting user data and demanding a ransom</option>
+            <option label="C">Sending a user a fake email designed to look genuine, encouraging data submission</option>
+            <option label="D">Redirecting website requests to a malicious site</option>
+        </options>
+        <answer>C</answer>
+        <source_basis></source_basis>
+    </question>
+    <question id="18">
+        <text>What is the definition of the Program Development Life Cycle (PDLC)?</text>
+        <options>
+            <option label="A">The process of testing a system using abnormal data</option>
+            <option label="B">The writing of a program using programming languages</option>
+            <option label="C">A series of structured steps/activities followed to produce a system</option>
+            <option label="D">A diagrammatic representation of an algorithm</option>
+        </options>
+        <answer>C</answer>
+        <source_basis></source_basis>
+    </question>
+    <question id="19">
+        <text>What term refers to taking a system and splitting it into smaller sub-systems?</text>
+        <options>
+            <option label="A">Verification</option>
+            <option label="B">Validation</option>
+            <option label="C">Decomposition</option>
+            <option label="D">Coding</option>
+        </options>
+        <answer>C</answer>
+        <source_basis></source_basis>
+    </question>
+    <question id="20">
+        <text>What is a diagrammatic representation of an algorithm?</text>
+        <options>
+            <option label="A">Pseudocode</option>
+            <option label="B">Structure diagram</option>
+            <option label="C">Flowchart</option>
+            <option label="D">Trace table</option>
+        </options>
+        <answer>C</answer>
+        <source_basis></source_basis>
+    </question>
+    <question id="21">
+        <text>Which type of test data is data that a program *should not* accept?</text>
+        <options>
+            <option label="A">Normal test data</option>
+            <option label="B">Extreme test data</option>
+            <option label="C">Abnormal test data</option>
+            <option label="D">Boundary test data</option>
+        </options>
+        <answer>C</answer>
+        <source_basis></source_basis>
+    </question>
+    <question id="22">
+        <text>What is a series of steps that searches for a specific value in a set of data?</text>
+        <options>
+            <option label="A">Sorting algorithm</option>
+            <option label="B">Bubble sort</option>
+            <option label="C">Search algorithm</option>
+            <option label="D">Validation check</option>
+        </options>
+        <answer>C</answer>
+        <source_basis></source_basis>
+    </question>
+    <question id="23">
+        <text>What is the process of checking that data entered is reasonable and within bounds?</text>
+        <options>
+            <option label="A">Verification</option>
+            <option label="B">Validation</option>
+            <option label="C">Trace table entry</option>
+            <option label="D">Linear search</option>
+        </options>
+        <answer>B</answer>
+        <source_basis></source_basis>
+    </question>
+    <question id="24">
+        <text>Which verification method requires two different people to enter the same data?</text>
+        <options>
+            <option label="A">Visual check</option>
+            <option label="B">Range check</option>
+            <option label="C">Double-entry check</option>
+            <option label="D">Presence check</option>
+        </options>
+        <answer>C</answer>
+        <source_basis></source_basis>
+    </question>
+    <question id="25">
+        <text>What search algorithm visits each item of data in turn to check whether it is the data being looked for?</text>
+        <options>
+            <option label="A">Bubble sort</option>
+            <option label="B">Binary search</option>
+            <option label="C">Linear search</option>
+            <option label="D">Minimum search</option>
+        </options>
+        <answer>C</answer>
+        <source_basis></source_basis>
+    </question>
+    <question id="26">
+        <text>What sorting algorithm moves through the list repeatedly swapping values in pairs?</text>
+        <options>
+            <option label="A">Linear search</option>
+            <option label="B">Bubble sort</option>
+            <option label="C">Maximum sort</option>
+            <option label="D">Verification sort</option>
+        </options>
+        <answer>B</answer>
+        <source_basis></source_basis>
+    </question>
+    <question id="27">
+        <text>What type of validation assesses whether data is within one or two bounds?</text>
+        <options>
+            <option label="A">Length check</option>
+            <option label="B">Type check</option>
+            <option label="C">Range check</option>
+            <option label="D">Presence check</option>
+        </options>
+        <answer>C</answer>
+        <source_basis></source_basis>
+    </question>
+    <question id="28">
+        <text>What is the smallest value within a set?</text>
+        <options>
+            <option label="A">Average</option>
+            <option label="B">Maximum</option>
+            <option label="C">Minimum</option>
+            <option label="D">Total</option>
+        </options>
+        <answer>C</answer>
+        <source_basis></source_basis>
+    </question>
+    <question id="29">
+        <text>What validation check ensures that some data has been entered?</text>
+        <options>
+            <option label="A">Length check</option>
+            <option label="B">Range check</option>
+            <option label="C">Presence check</option>
+            <option label="D">Format check</option>
+        </options>
+        <answer>C</answer>
+        <source_basis></source_basis>
+    </question>
+    <question id="30">
+        <text>What is calculated from a set of numbers and is input with the numbers for validation purposes?</text>
+        <options>
+            <option label="A">Check sum</option>
+            <option label="B">Check digit</option>
+            <option label="C">Control total</option>
+            <option label="D">Digital certificate</option>
+        </options>
+        <answer>B</answer>
+        <source_basis></source_basis>
+    </question>
+</question_list>
+```
