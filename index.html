@@ -308,6 +308,10 @@
             { id_key: "Healer", name: "Healer", size: 25, speed: 100, health: 60, xp: 50, shape: 'oval', color: '#00ff88', damage: 2, maxHealth: 60, isHealer: true, healCooldown: 2000, lastHealTime: 0, healAmount: 15, healRadius: 150 }, // Green oval (terminal)
             { id_key: "Splitter", name: "Splitter", size: 30, speed: 120, health: 80, xp: 45, shape: 'trapezoid', color: '#ff8800', damage: 8, maxHealth: 80, isSplitter: true }, // Orange trapezoid (manual operation)
             { id_key: "Bomber", name: "Bomber", size: 22, speed: 200, health: 35, xp: 30, shape: 'diamond', color: '#ff0088', damage: 25, maxHealth: 35, isBomber: true, explosionRadius: 80, explosionDamage: 30 }, // Hot pink diamond (decision)
+            // NEW ENEMIES
+            { id_key: "Sniper", name: "Sniper", size: 25, speed: 150, health: 40, xp: 40, shape: 'triangle', color: '#00ffff', damage: 15, maxHealth: 40, isSniper: true, shootCooldown: 2000, lastShotTime: 0, range: 400 }, // Cyan triangle
+            { id_key: "Summoner", name: "Summoner", size: 40, speed: 80, health: 150, xp: 80, shape: 'hexagon', color: '#880088', damage: 5, maxHealth: 150, isSummoner: true, summonCooldown: 3000, lastSummonTime: 0 }, // Purple hexagon
+            { id_key: "Dasher", name: "Dasher", size: 20, speed: 100, health: 50, xp: 35, shape: 'triangle', color: '#ffaa00', damage: 15, maxHealth: 50, isDasher: true, dashState: 'idle', dashTimer: 0, dashSpeed: 600 }, // Orange triangle
         ];
         const bossType = { id_key: "Boss", name: "Boss", size: 80, speed: 90, health: 900, xp: 2000, shape: 'hexagon', color: '#ff0000', damage: 250, maxHealth: 500, isBoss: true, shootCooldown: 200, lastShotTime: 0, isMultipart: true }; // Large red hexagon boss
         // --- MEME-POWERED Upgrades (Much Wow) ---
@@ -332,7 +336,11 @@
             'ORBITAL_AXE': { name: "Spinning Axes", description: "Axes orbit around you", apply: (p) => { p.orbitalCount = (p.orbitalCount || 0) + 1; addOrbitalWeapon(); } },
             'CHARGE_SHOT': { name: "Mega Cannon", description: "Hold Space for huge shot", apply: (p) => p.hasChargeShot = true },
             'STUN_SHOT': { name: "Stunner", description: "Stun projectiles pierce infinitely", apply: (p) => p.hasStunShot = true },
-            'RAGE_MODE': { name: "Berserker Rage", description: "10s mega boost at low HP", apply: (p) => p.hasRageMode = true }
+            'RAGE_MODE': { name: "Berserker Rage", description: "10s mega boost at low HP", apply: (p) => p.hasRageMode = true },
+            // NEW POWERUPS
+            'HOMING_SHOT': { name: "Homing Missiles", description: "Shots seek enemies", apply: (p) => p.hasHomingShot = true },
+            'EXPLOSIVE_SHOT': { name: "Explosive Rounds", description: "Shots explode on impact", apply: (p) => p.hasExplosiveShot = true },
+            'FREEZE_FIELD': { name: "Absolute Zero", description: "Slows nearby enemies", apply: (p) => p.hasFreezeField = true }
         };
 
         // --- ICT Question Bank from XML ---
@@ -559,6 +567,22 @@
              if (player.hasStunShot && Math.random() > 0.95) {
                  shootStunProjectile(player.weaponAngle);
              }
+
+             // Freeze Field Logic
+            if (player.hasFreezeField) {
+                enemies.forEach(e => {
+                    const d = Math.hypot(e.x - player.x, e.y - player.y);
+                    if (d < 200) {
+                        e.speed *= 0.95; // Slow down
+                        if (Math.random() > 0.9) {
+                            e.stunned = true;
+                            e.stunnedUntil = Date.now() + 500;
+                        }
+                        // Visual
+                        if (Math.random() > 0.8) spawnParticleEmitter(e.x, e.y, '#00ffff', 1);
+                    }
+                });
+            }
         }
 
         function updateEnemies(delta) {
@@ -573,10 +597,81 @@
                 const dx = player.x - e.x;
                 const dy = player.y - e.y;
                 const distSq = dx*dx + dy*dy;
-                if (distSq > e.size * e.size) {
-                    const dist = Math.sqrt(distSq);
+                const dist = Math.sqrt(distSq);
+
+                // Custom Movement Logic
+                let shouldMove = true;
+
+                if (e.isSniper) {
+                    if (dist < e.range) shouldMove = false;
+                    // Shoot
+                    const now = Date.now();
+                    if (now - e.lastShotTime >= e.shootCooldown && dist < e.range * 1.5) {
+                        e.lastShotTime = now;
+                        enemyProjectiles.push({
+                            x: e.x, y: e.y,
+                            vx: (dx / dist) * 400,
+                            vy: (dy / dist) * 400,
+                            size: 8, damage: e.damage, lifetime: 3, color: '#00ffff'
+                        });
+                    }
+                } else if (e.isDasher) {
+                    if (!e.dashState) e.dashState = 'idle';
+                    
+                    if (e.dashState === 'idle') {
+                        e.dashTimer = (e.dashTimer || 0) + delta;
+                        if (e.dashTimer > 2) {
+                            e.dashState = 'charging';
+                            e.dashTimer = 0;
+                            e.color = '#ffffff'; // Flash white
+                        }
+                    } else if (e.dashState === 'charging') {
+                        shouldMove = false;
+                        e.dashTimer += delta;
+                        if (e.dashTimer > 0.5) {
+                            e.dashState = 'dashing';
+                            e.dashTimer = 0;
+                            e.dashVX = (dx / dist) * e.dashSpeed;
+                            e.dashVY = (dy / dist) * e.dashSpeed;
+                            e.color = '#ffaa00';
+                        }
+                    } else if (e.dashState === 'dashing') {
+                        shouldMove = false;
+                        e.dashTimer += delta;
+                        e.x += e.dashVX * delta;
+                        e.y += e.dashVY * delta;
+                        if (e.dashTimer > 0.3) {
+                            e.dashState = 'cooldown';
+                            e.dashTimer = 0;
+                        }
+                    } else if (e.dashState === 'cooldown') {
+                        e.dashTimer += delta;
+                        if (e.dashTimer > 1.5) {
+                            e.dashState = 'idle';
+                            e.dashTimer = 0;
+                            e.color = '#ffaa00'; // Reset color
+                        }
+                    }
+                }
+
+                if (shouldMove && distSq > e.size * e.size) {
                     e.x += (dx / dist) * e.speed * delta;
                     e.y += (dy / dist) * e.speed * delta;
+                }
+
+                // Summoner Logic
+                if (e.isSummoner) {
+                    const now = Date.now();
+                    if (now - e.lastSummonTime >= e.summonCooldown) {
+                        e.lastSummonTime = now;
+                        // Spawn Swarm
+                         enemies.push({
+                            id: Math.random(),
+                            x: e.x + (Math.random()-0.5)*50,
+                            y: e.y + (Math.random()-0.5)*50,
+                            id_key: "Swarm", name: "Swarm", size: 7, speed: 250, health: 10, xp: 15, shape: 'diamond', color: '#88ff88', damage: 1, maxHealth: 10
+                        });
+                    }
                 }
 
                 // Boss shooting logic
@@ -612,6 +707,34 @@
         function updateProjectiles(delta) {
              for (let i = projectiles.length - 1; i >= 0; i--) {
                 const p = projectiles[i];
+
+                // Homing Logic
+                if (player.hasHomingShot && enemies.length > 0) {
+                    let closest = null;
+                    let minDist = 300; // Homing range
+                    for (const e of enemies) {
+                        const d = Math.hypot(e.x - p.x, e.y - p.y);
+                        if (d < minDist) {
+                            minDist = d;
+                            closest = e;
+                        }
+                    }
+                    if (closest) {
+                        const angle = Math.atan2(closest.y - p.y, closest.x - p.x);
+                        // Steer towards target
+                        const speed = Math.hypot(p.vx, p.vy);
+                        const turnRate = 5 * delta;
+                        const targetVX = Math.cos(angle) * speed;
+                        const targetVY = Math.sin(angle) * speed;
+                        p.vx += (targetVX - p.vx) * turnRate;
+                        p.vy += (targetVY - p.vy) * turnRate;
+                        // Normalize speed
+                        const newSpeed = Math.hypot(p.vx, p.vy);
+                        p.vx = (p.vx / newSpeed) * speed;
+                        p.vy = (p.vy / newSpeed) * speed;
+                    }
+                }
+
                 p.x += p.vx * delta;
                 p.y += p.vy * delta;
                 p.lifetime -= delta;
@@ -747,6 +870,18 @@
                         if (distSq < (e.size + p.size) * (e.size + p.size)) {
                             handleEnemyHit(e, p.damage);
                             spawnParticleEmitter(p.x, p.y, '#ffffff', 3); // <-- NEW: Hit spark
+
+                            // Explosive Shot
+                            if (player.hasExplosiveShot) {
+                                spawnParticleEmitter(p.x, p.y, '#ff4400', 10);
+                                enemies.forEach(nearby => {
+                                    if (nearby === e) return;
+                                    const d = Math.hypot(nearby.x - p.x, nearby.y - p.y);
+                                    if (d < 100) {
+                                        handleEnemyHit(nearby, p.damage * 0.5);
+                                    }
+                                });
+                            }
                             if (!p.hitEnemies) p.hitEnemies = [];
                             p.hitEnemies.push(e.id);
                             if (p.pierceCount <= 0) {
@@ -1592,6 +1727,12 @@
              } else if (e.shape === 'circle') {
                  // Circle (fallback)
                  ctx.arc(x, y, s/2, 0, Math.PI * 2);
+             } else if (e.shape === 'triangle') {
+                 // Triangle (Sniper/Dasher)
+                 ctx.moveTo(x, y - s/2);
+                 ctx.lineTo(x + s/2, y + s/2);
+                 ctx.lineTo(x - s/2, y + s/2);
+                 ctx.closePath();
              } else {
                  // Default to square
                  if (outlineOnly) {
