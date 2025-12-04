@@ -1,336 +1,1114 @@
-This XML list provides a conversion of a comprehensive selection of the 150 multiple-choice questions generated previously, structured to include the question text, options, correct answer, and the source excerpt used to create the question.
-
-```xml
+<?xml version="1.0" encoding="UTF-8"?>
 <question_list>
+    <!-- Automation and Robotics (Concepts 1–25) -->
     <question id="1">
-        <text>What is the collective term for all websites and web pages available online through the internet?</text>
+        <text>What is automation?</text>
         <options>
-            <option label="A">Uniform Resource Locator</option>
-            <option label="B">Domain Name Server</option>
-            <option label="C">World Wide Web</option>
-            <option label="D">Hypertext Transfer Protocol</option>
+            <option label="A">The use of manual labor to perform tasks</option>
+            <option label="B">The use of technology to perform tasks with minimal human intervention</option>
+            <option label="C">The process of designing mechanical tools</option>
+            <option label="D">The study of human-robot interaction</option>
         </options>
-        <answer>C</answer>
-        <source_basis></source_basis>
+        <answer>B</answer>
+        <source_basis>Automation and Robotics</source_basis>
     </question>
     <question id="2">
-        <text>What is defined as a huge infrastructure used by homes, businesses, and institutions worldwide to connect to each other?</text>
+        <text>What is the primary goal of automation in industry?</text>
         <options>
-            <option label="A">The World Wide Web</option>
-            <option label="B">The internet</option>
-            <option label="C">A Web Server</option>
-            <option label="D">A Local Area Network</option>
+            <option label="A">To increase the number of employees</option>
+            <option label="B">To make machines look more modern</option>
+            <option label="C">To improve productivity and efficiency</option>
+            <option label="D">To increase the cost of production</option>
         </options>
-        <answer>B</answer>
-        <source_basis></source_basis>
+        <answer>C</answer>
+        <source_basis>Automation and Robotics</source_basis>
     </question>
     <question id="3">
-        <text>Which component is NOT one of the three main components of a URL?</text>
+        <text>How does automation affect manual labor needs?</text>
         <options>
-            <option label="A">Protocol</option>
-            <option label="B">Domain name</option>
-            <option label="C">Web page or file name</option>
-            <option label="D">IP Address</option>
+            <option label="A">It increases the need for manual lifting</option>
+            <option label="B">It has no effect on manual labor</option>
+            <option label="C">It typically reduces the need for manual labor</option>
+            <option label="D">It requires more manual labor for operation</option>
         </options>
-        <answer>D</answer>
-        <source_basis></source_basis>
+        <answer>C</answer>
+        <source_basis>Automation and Robotics</source_basis>
     </question>
     <question id="4">
-        <text>What is the specialized server that stores domain names along with their equivalent IP addresses?</text>
+        <text>Why does automation often improve productivity?</text>
         <options>
-            <option label="A">Web Server</option>
-            <option label="B">Proxy Server</option>
-            <option label="C">Certificate Authority</option>
-            <option label="D">Domain Name Server (DNS)</option>
+            <option label="A">Machines can work continuously without breaks</option>
+            <option label="B">Machines are slower but more accurate</option>
+            <option label="C">It requires more people to manage</option>
+            <option label="D">It stops production frequently for checks</option>
         </options>
-        <answer>D</answer>
-        <source_basis></source_basis>
+        <answer>A</answer>
+        <source_basis>Automation and Robotics</source_basis>
     </question>
     <question id="5">
-        <text>What is the protocol used for the transmission of web pages and related data across the internet?</text>
+        <text>How can automation reduce human error?</text>
         <options>
-            <option label="A">HTML</option>
-            <option label="B">CSS</option>
-            <option label="C">HTTP</option>
-            <option label="D">SSL</option>
+            <option label="A">By replacing humans with animals</option>
+            <option label="B">By performing tasks with consistent precision</option>
+            <option label="C">By allowing humans to work faster</option>
+            <option label="D">By removing all safety checks</option>
         </options>
-        <answer>C</answer>
-        <source_basis></source_basis>
+        <answer>B</answer>
+        <source_basis>Automation and Robotics</source_basis>
     </question>
     <question id="6">
-        <text>What is HTTPS?</text>
+        <text>Why is automation useful in hazardous environments?</text>
         <options>
-            <option label="A">Hypertext Template Transmission Service</option>
-            <option label="B">A secure version of HTTP that encrypts data for transmission</option>
-            <option label="C">A scripting language for web page interaction</option>
-            <option label="D">A protocol for searching data</option>
+            <option label="A">It is cheaper than safety equipment</option>
+            <option label="B">It keeps humans away from dangerous conditions</option>
+            <option label="C">Machines enjoy dangerous work</option>
+            <option label="D">It increases the danger level</option>
         </options>
         <answer>B</answer>
-        <source_basis></source_basis>
+        <source_basis>Automation and Robotics</source_basis>
     </question>
     <question id="7">
-        <text>What is the software application that allows access to information available on the World Wide Web?</text>
+        <text>What is industrial robotics?</text>
         <options>
-            <option label="A">Search engine</option>
-            <option label="B">DNS</option>
-            <option label="C">Web server</option>
-            <option label="D">Web browser</option>
+            <option label="A">Toys designed for children</option>
+            <option label="B">The use of robots for domestic chores</option>
+            <option label="C">The use of programmable robots in manufacturing</option>
+            <option label="D">A movie genre</option>
         </options>
-        <answer>D</answer>
-        <source_basis></source_basis>
+        <answer>C</answer>
+        <source_basis>Automation and Robotics</source_basis>
     </question>
     <question id="8">
-        <text>What protocol encrypts data for transmission and is combined with HTTP to create HTTPS?</text>
+        <text>Name one common use of robots in manufacturing.</text>
         <options>
-            <option label="A">TLS</option>
-            <option label="B">SSL (Secure Sockets Layer)</option>
-            <option label="C">DNS</option>
-            <option label="D">TCP/IP</option>
+            <option label="A">Cooking lunch</option>
+            <option label="B">Welding car parts</option>
+            <option label="C">Writing reports</option>
+            <option label="D">Managing finances</option>
         </options>
         <answer>B</answer>
-        <source_basis></source_basis>
+        <source_basis>Automation and Robotics</source_basis>
     </question>
     <question id="9">
-        <text>What are small text files used to store data about your frequent online activities?</text>
+        <text>How are robots used on assembly lines?</text>
         <options>
-            <option label="A">Data packets</option>
-            <option label="B">Active scripts</option>
-            <option label="C">Cookies</option>
-            <option label="D">Digital ledgers</option>
+            <option label="A">To supervise human workers</option>
+            <option label="B">To perform repetitive tasks like assembly and screwing</option>
+            <option label="C">To design the products</option>
+            <option label="D">To sell the products</option>
         </options>
-        <answer>C</answer>
-        <source_basis></source_basis>
+        <answer>B</answer>
+        <source_basis>Automation and Robotics</source_basis>
     </question>
     <question id="10">
-        <text>What type of cookie is deleted when the web browser is closed?</text>
+        <text>Why are robots often used for welding?</text>
         <options>
-            <option label="A">Persistent cookies</option>
-            <option label="B">Targeted cookies</option>
-            <option label="C">Session cookies</option>
-            <option label="D">Temporary cookies</option>
+            <option label="A">They are cheaper than welding rods</option>
+            <option label="B">They can handle high heat and toxic fumes safely</option>
+            <option label="C">They are not good at other tasks</option>
+            <option label="D">They enjoy the bright lights</option>
         </options>
-        <answer>C</answer>
-        <source_basis></source_basis>
+        <answer>B</answer>
+        <source_basis>Automation and Robotics</source_basis>
     </question>
     <question id="11">
-        <text>What is the decentralized system that tracks all transactions for cryptocurrency?</text>
+        <text>Why is painting a good task for robots?</text>
         <options>
-            <option label="A">Digital Ledger</option>
-            <option label="B">Proxy Server</option>
-            <option label="C">Blockchain</option>
-            <option label="D">Domain Name Server</option>
+            <option label="A">They are artistic</option>
+            <option label="B">They can apply paint evenly and avoid fume inhalation</option>
+            <option label="C">They can change colors instantly</option>
+            <option label="D">They use less paint than humans</option>
         </options>
-        <answer>C</answer>
-        <source_basis></source_basis>
+        <answer>B</answer>
+        <source_basis>Automation and Robotics</source_basis>
     </question>
     <question id="12">
-        <text>What is the practice of defending computers, servers, networks, and data from malicious attacks?</text>
+        <text>What is material handling in factories?</text>
         <options>
-            <option label="A">Social engineering</option>
-            <option label="B">Hacking</option>
-            <option label="C">Data interception</option>
-            <option label="D">Cyber security</option>
+            <option label="A">Buying raw materials</option>
+            <option label="B">Moving, controlling, and protecting materials</option>
+            <option label="C">Selling finished goods</option>
+            <option label="D">Disposing of waste only</option>
         </options>
-        <answer>D</answer>
-        <source_basis></source_basis>
+        <answer>B</answer>
+        <source_basis>Automation and Robotics</source_basis>
     </question>
     <question id="13">
-        <text>What software is used to examine data packets as they are sent across a network or the internet for the purpose of interception?</text>
+        <text>How do robots help with packaging?</text>
         <options>
-            <option label="A">Anti-malware</option>
-            <option label="B">Botnet</option>
-            <option label="C">Packet sniffer</option>
-            <option label="D">Firewall</option>
+            <option label="A">By designing the boxes</option>
+            <option label="B">By quickly and accurately placing items into boxes</option>
+            <option label="C">By delivering packages to homes</option>
+            <option label="D">By printing shipping labels only</option>
         </options>
-        <answer>C</answer>
-        <source_basis></source_basis>
+        <answer>B</answer>
+        <source_basis>Automation and Robotics</source_basis>
     </question>
     <question id="14">
-        <text>What does DDoS stand for?</text>
+        <text>Why is “customer service” not usually a job for industrial robots?</text>
         <options>
-            <option label="A">Data Definition of Service</option>
-            <option label="B">Digital Distribution of Systems</option>
-            <option label="C">Decentralized Denial of Service</option>
-            <option label="D">Distributed Denial of Service</option>
+            <option label="A">They are too loud</option>
+            <option label="B">It requires empathy and complex human interaction</option>
+            <option label="C">They are too expensive</option>
+            <option label="D">They cannot speak</option>
         </options>
-        <answer>D</answer>
-        <source_basis></source_basis>
+        <answer>B</answer>
+        <source_basis>Automation and Robotics</source_basis>
     </question>
     <question id="15">
-        <text>What is the general term used to describe any malicious software designed to disrupt your computer or data?</text>
+        <text>What is a sensor in an automated system?</text>
         <options>
-            <option label="A">Botnet</option>
-            <option label="B">Hacker</option>
-            <option label="C">Malware</option>
-            <option label="D">Digital certificate</option>
+            <option label="A">The brain of the computer</option>
+            <option label="B">A device that detects changes in the environment</option>
+            <option label="C">A type of motor</option>
+            <option label="D">A power source</option>
         </options>
-        <answer>C</answer>
-        <source_basis></source_basis>
+        <answer>B</answer>
+        <source_basis>Automation and Robotics</source_basis>
     </question>
     <question id="16">
-        <text>What malware encrypts data and stops the user from accessing it, demanding money to decrypt it?</text>
+        <text>Give two examples of sensor types.</text>
         <options>
-            <option label="A">Trojan horse</option>
-            <option label="B">Adware</option>
-            <option label="C">Worm</option>
-            <option label="D">Ransomware</option>
+            <option label="A">Mouse and Keyboard</option>
+            <option label="B">Temperature and Proximity</option>
+            <option label="C">Monitor and Printer</option>
+            <option label="D">CPU and RAM</option>
         </options>
-        <answer>D</answer>
-        <source_basis></source_basis>
+        <answer>B</answer>
+        <source_basis>Automation and Robotics</source_basis>
     </question>
     <question id="17">
-        <text>What is phishing?</text>
+        <text>What do sensors provide to the control system?</text>
         <options>
-            <option label="A">Manipulating employees into providing key information</option>
-            <option label="B">Encrypting user data and demanding a ransom</option>
-            <option label="C">Sending a user a fake email designed to look genuine, encouraging data submission</option>
-            <option label="D">Redirecting website requests to a malicious site</option>
+            <option label="A">Power</option>
+            <option label="B">Feedback data</option>
+            <option label="C">Instructions</option>
+            <option label="D">Oil</option>
         </options>
-        <answer>C</answer>
-        <source_basis></source_basis>
+        <answer>B</answer>
+        <source_basis>Automation and Robotics</source_basis>
     </question>
     <question id="18">
-        <text>What is the definition of the Program Development Life Cycle (PDLC)?</text>
+        <text>Why is feedback important in automation?</text>
         <options>
-            <option label="A">The process of testing a system using abnormal data</option>
-            <option label="B">The writing of a program using programming languages</option>
-            <option label="C">A series of structured steps/activities followed to produce a system</option>
-            <option label="D">A diagrammatic representation of an algorithm</option>
+            <option label="A">It tells the machine when to stop for lunch</option>
+            <option label="B">It allows the system to adjust and maintain control</option>
+            <option label="C">It makes the machine faster</option>
+            <option label="D">It saves electricity</option>
         </options>
-        <answer>C</answer>
-        <source_basis></source_basis>
+        <answer>B</answer>
+        <source_basis>Automation and Robotics</source_basis>
     </question>
     <question id="19">
-        <text>What term refers to taking a system and splitting it into smaller sub-systems?</text>
+        <text>What is a Programmable Logic Controller (PLC)?</text>
         <options>
-            <option label="A">Verification</option>
-            <option label="B">Validation</option>
-            <option label="C">Decomposition</option>
-            <option label="D">Coding</option>
+            <option label="A">A personal computer for gaming</option>
+            <option label="B">A digital computer used for industrial automation</option>
+            <option label="C">A type of sensor</option>
+            <option label="D">A robot arm</option>
         </options>
-        <answer>C</answer>
-        <source_basis></source_basis>
+        <answer>B</answer>
+        <source_basis>Automation and Robotics</source_basis>
     </question>
     <question id="20">
-        <text>What is a diagrammatic representation of an algorithm?</text>
+        <text>What kind of tasks do PLCs control?</text>
         <options>
-            <option label="A">Pseudocode</option>
-            <option label="B">Structure diagram</option>
-            <option label="C">Flowchart</option>
-            <option label="D">Trace table</option>
+            <option label="A">Writing emails</option>
+            <option label="B">Machinery on factory assembly lines</option>
+            <option label="C">Graphic design</option>
+            <option label="D">Web browsing</option>
         </options>
-        <answer>C</answer>
-        <source_basis></source_basis>
+        <answer>B</answer>
+        <source_basis>Automation and Robotics</source_basis>
     </question>
     <question id="21">
-        <text>Which type of test data is data that a program *should not* accept?</text>
+        <text>Why is it helpful that PLCs can be reprogrammed?</text>
         <options>
-            <option label="A">Normal test data</option>
-            <option label="B">Extreme test data</option>
-            <option label="C">Abnormal test data</option>
-            <option label="D">Boundary test data</option>
+            <option label="A">It makes them cheaper to buy</option>
+            <option label="B">They can be adapted for different tasks or processes</option>
+            <option label="C">They break down less often</option>
+            <option label="D">They use less power</option>
         </options>
-        <answer>C</answer>
-        <source_basis></source_basis>
+        <answer>B</answer>
+        <source_basis>Automation and Robotics</source_basis>
     </question>
     <question id="22">
-        <text>What is a series of steps that searches for a specific value in a set of data?</text>
+        <text>How can automation affect the number of low-skill jobs?</text>
         <options>
-            <option label="A">Sorting algorithm</option>
-            <option label="B">Bubble sort</option>
-            <option label="C">Search algorithm</option>
-            <option label="D">Validation check</option>
+            <option label="A">It always increases them</option>
+            <option label="B">It often decreases them as machines take over repetitive tasks</option>
+            <option label="C">It has no effect</option>
+            <option label="D">It changes them to high-skill jobs immediately</option>
         </options>
-        <answer>C</answer>
-        <source_basis></source_basis>
+        <answer>B</answer>
+        <source_basis>Automation and Robotics</source_basis>
     </question>
     <question id="23">
-        <text>What is the process of checking that data entered is reasonable and within bounds?</text>
+        <text>How can automation create new types of jobs?</text>
         <options>
-            <option label="A">Verification</option>
-            <option label="B">Validation</option>
-            <option label="C">Trace table entry</option>
-            <option label="D">Linear search</option>
+            <option label="A">By requiring more manual labor</option>
+            <option label="B">By creating demand for robot maintenance and programming</option>
+            <option label="C">By reducing the need for education</option>
+            <option label="D">It does not create new jobs</option>
         </options>
         <answer>B</answer>
-        <source_basis></source_basis>
+        <source_basis>Automation and Robotics</source_basis>
     </question>
     <question id="24">
-        <text>Which verification method requires two different people to enter the same data?</text>
+        <text>Why might some workers feel threatened by automation?</text>
         <options>
-            <option label="A">Visual check</option>
-            <option label="B">Range check</option>
-            <option label="C">Double-entry check</option>
-            <option label="D">Presence check</option>
+            <option label="A">They fear machines will take their jobs</option>
+            <option label="B">They don't like technology</option>
+            <option label="C">Machines are too loud</option>
+            <option label="D">They prefer working harder</option>
         </options>
-        <answer>C</answer>
-        <source_basis></source_basis>
+        <answer>A</answer>
+        <source_basis>Automation and Robotics</source_basis>
     </question>
     <question id="25">
-        <text>What search algorithm visits each item of data in turn to check whether it is the data being looked for?</text>
+        <text>How can businesses prepare workers for more automation?</text>
         <options>
-            <option label="A">Bubble sort</option>
-            <option label="B">Binary search</option>
-            <option label="C">Linear search</option>
-            <option label="D">Minimum search</option>
-        </options>
-        <answer>C</answer>
-        <source_basis></source_basis>
-    </question>
-    <question id="26">
-        <text>What sorting algorithm moves through the list repeatedly swapping values in pairs?</text>
-        <options>
-            <option label="A">Linear search</option>
-            <option label="B">Bubble sort</option>
-            <option label="C">Maximum sort</option>
-            <option label="D">Verification sort</option>
+            <option label="A">By firing them</option>
+            <option label="B">By providing training and upskilling programs</option>
+            <option label="C">By ignoring the changes</option>
+            <option label="D">By reducing their wages</option>
         </options>
         <answer>B</answer>
-        <source_basis></source_basis>
+        <source_basis>Automation and Robotics</source_basis>
+    </question>
+
+    <!-- CNC Machines and SMEs (26–40) -->
+    <question id="26">
+        <text>What does CNC stand for?</text>
+        <options>
+            <option label="A">Computer Network Control</option>
+            <option label="B">Computer Numerical Control</option>
+            <option label="C">Central Numerical Computer</option>
+            <option label="D">Control Number Code</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>CNC Machines and SMEs</source_basis>
     </question>
     <question id="27">
-        <text>What type of validation assesses whether data is within one or two bounds?</text>
+        <text>How do CNC machines differ from manual machines?</text>
         <options>
-            <option label="A">Length check</option>
-            <option label="B">Type check</option>
-            <option label="C">Range check</option>
-            <option label="D">Presence check</option>
-        </options>
-        <answer>C</answer>
-        <source_basis></source_basis>
-    </question>
-    <question id="28">
-        <text>What is the smallest value within a set?</text>
-        <options>
-            <option label="A">Average</option>
-            <option label="B">Maximum</option>
-            <option label="C">Minimum</option>
-            <option label="D">Total</option>
-        </options>
-        <answer>C</answer>
-        <source_basis></source_basis>
-    </question>
-    <question id="29">
-        <text>What validation check ensures that some data has been entered?</text>
-        <options>
-            <option label="A">Length check</option>
-            <option label="B">Range check</option>
-            <option label="C">Presence check</option>
-            <option label="D">Format check</option>
-        </options>
-        <answer>C</answer>
-        <source_basis></source_basis>
-    </question>
-    <question id="30">
-        <text>What is calculated from a set of numbers and is input with the numbers for validation purposes?</text>
-        <options>
-            <option label="A">Check sum</option>
-            <option label="B">Check digit</option>
-            <option label="C">Control total</option>
-            <option label="D">Digital certificate</option>
+            <option label="A">They are smaller</option>
+            <option label="B">They are controlled by computer programs, not hand wheels</option>
+            <option label="C">They are made of plastic</option>
+            <option label="D">They do not use electricity</option>
         </options>
         <answer>B</answer>
-        <source_basis></source_basis>
+        <source_basis>CNC Machines and SMEs</source_basis>
+    </question>
+    <question id="28">
+        <text>Why are CNC machines good for producing complex parts?</text>
+        <options>
+            <option label="A">They can move in multiple axes simultaneously with high precision</option>
+            <option label="B">They are cheaper than manual machines</option>
+            <option label="C">They use softer materials</option>
+            <option label="D">They are faster to set up</option>
+        </options>
+        <answer>A</answer>
+        <source_basis>CNC Machines and SMEs</source_basis>
+    </question>
+    <question id="29">
+        <text>How do CNC machines improve precision?</text>
+        <options>
+            <option label="A">By guessing the dimensions</option>
+            <option label="B">By repeating exact movements programmed in code</option>
+            <option label="C">By using manual measurements</option>
+            <option label="D">By moving very slowly</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>CNC Machines and SMEs</source_basis>
+    </question>
+    <question id="30">
+        <text>Why can CNC machines increase production speed?</text>
+        <options>
+            <option label="A">They never stop for breaks and run at optimal speeds</option>
+            <option label="B">They skip steps in the process</option>
+            <option label="C">They use less material</option>
+            <option label="D">They are smaller and lighter</option>
+        </options>
+        <answer>A</answer>
+        <source_basis>CNC Machines and SMEs</source_basis>
+    </question>
+    <question id="31">
+        <text>How does CNC help reduce waste or defects?</text>
+        <options>
+            <option label="A">By recycling chips automatically</option>
+            <option label="B">By minimizing human error and optimizing cutting paths</option>
+            <option label="C">By using cheaper materials</option>
+            <option label="D">By producing smaller parts</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>CNC Machines and SMEs</source_basis>
+    </question>
+    <question id="32">
+        <text>Why are CNC machines considered flexible in design changes?</text>
+        <options>
+            <option label="A">They are made of rubber</option>
+            <option label="B">You only need to update the software program, not the hardware</option>
+            <option label="C">They can be easily moved around the shop</option>
+            <option label="D">They can change color</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>CNC Machines and SMEs</source_basis>
+    </question>
+    <question id="33">
+        <text>How can automation help small and medium-sized enterprises (SMEs)?</text>
+        <options>
+            <option label="A">By increasing their taxes</option>
+            <option label="B">By improving efficiency and product quality</option>
+            <option label="C">By making them hire more managers</option>
+            <option label="D">By complicating their workflows</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>CNC Machines and SMEs</source_basis>
+    </question>
+    <question id="34">
+        <text>How can automation reduce costs for SMEs in the long term?</text>
+        <options>
+            <option label="A">By increasing electricity bills</option>
+            <option label="B">By reducing labor costs and material waste</option>
+            <option label="C">By requiring expensive repairs</option>
+            <option label="D">By lowering product prices too much</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>CNC Machines and SMEs</source_basis>
+    </question>
+    <question id="35">
+        <text>How can automation help SMEs maintain product quality?</text>
+        <options>
+            <option label="A">By producing random variations</option>
+            <option label="B">By ensuring consistent production standards</option>
+            <option label="C">By using manual inspection only</option>
+            <option label="D">By slowing down production</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>CNC Machines and SMEs</source_basis>
+    </question>
+    <question id="36">
+        <text>Why is flexibility important for SMEs?</text>
+        <options>
+            <option label="A">To do yoga</option>
+            <option label="B">To adapt quickly to market changes and custom orders</option>
+            <option label="C">To avoid making decisions</option>
+            <option label="D">To use old equipment</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>CNC Machines and SMEs</source_basis>
+    </question>
+    <question id="37">
+        <text>Give one example of automation that a small business might use.</text>
+        <options>
+            <option label="A">A nuclear reactor</option>
+            <option label="B">A 3D printer for prototyping</option>
+            <option label="C">A space shuttle</option>
+            <option label="D">A manual saw</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>CNC Machines and SMEs</source_basis>
+    </question>
+    <question id="38">
+        <text>How can automation help SMEs compete with larger companies?</text>
+        <options>
+            <option label="A">By allowing them to produce high-quality goods at lower costs</option>
+            <option label="B">By making them look bigger</option>
+            <option label="C">By copying their logos</option>
+            <option label="D">By hiring their employees</option>
+        </options>
+        <answer>A</answer>
+        <source_basis>CNC Machines and SMEs</source_basis>
+    </question>
+    <question id="39">
+        <text>Why might the initial cost of automation be a challenge for SMEs?</text>
+        <options>
+            <option label="A">Automation is free</option>
+            <option label="B">Machines and software can be expensive to purchase and install</option>
+            <option label="C">They have too much money</option>
+            <option label="D">Banks do not like SMEs</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>CNC Machines and SMEs</source_basis>
+    </question>
+    <question id="40">
+        <text>How could government support help SMEs adopt automation?</text>
+        <options>
+            <option label="A">By banning automation</option>
+            <option label="B">By providing grants, tax breaks, or training funding</option>
+            <option label="C">By increasing tariffs</option>
+            <option label="D">By ignoring them</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>CNC Machines and SMEs</source_basis>
+    </question>
+
+    <!-- Everyday Automation and AI (41–55) -->
+    <question id="41">
+        <text>What is an example of automation in everyday life?</text>
+        <options>
+            <option label="A">Walking a dog</option>
+            <option label="B">Automatic sliding doors at a grocery store</option>
+            <option label="C">Reading a book</option>
+            <option label="D">Hand-washing dishes</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Everyday Automation and AI</source_basis>
+    </question>
+    <question id="42">
+        <text>Why is a self-checkout machine considered automation?</text>
+        <options>
+            <option label="A">It is run by a person inside</option>
+            <option label="B">It allows the customer to process transactions without a cashier</option>
+            <option label="C">It gives free food</option>
+            <option label="D">It is not automation</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Everyday Automation and AI</source_basis>
+    </question>
+    <question id="43">
+        <text>Why is a manual typewriter not an example of automation?</text>
+        <options>
+            <option label="A">It uses electricity</option>
+            <option label="B">It requires full human effort for every character printed</option>
+            <option label="C">It is too old</option>
+            <option label="D">It has keys</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Everyday Automation and AI</source_basis>
+    </question>
+    <question id="44">
+        <text>How do ATMs demonstrate automation?</text>
+        <options>
+            <option label="A">They print money manually</option>
+            <option label="B">They perform banking transactions without a bank teller</option>
+            <option label="C">They are open 24/7</option>
+            <option label="D">They are secure</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Everyday Automation and AI</source_basis>
+    </question>
+    <question id="45">
+        <text>How do washing machines use simple automation?</text>
+        <options>
+            <option label="A">They wash clothes by hand</option>
+            <option label="B">They use sensors and timers to run cycles automatically</option>
+            <option label="C">They use cold water</option>
+            <option label="D">They need to be watched constantly</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Everyday Automation and AI</source_basis>
+    </question>
+    <question id="46">
+        <text>What is Artificial Intelligence (AI)?</text>
+        <options>
+            <option label="A">A robot that looks like a human</option>
+            <option label="B">Computer systems capable of performing tasks that typically require human intelligence</option>
+            <option label="C">A video game</option>
+            <option label="D">A smart phone</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Everyday Automation and AI</source_basis>
+    </question>
+    <question id="47">
+        <text>Give one example of AI in daily life.</text>
+        <options>
+            <option label="A">A toaster</option>
+            <option label="B">Voice assistants like Siri or Alexa</option>
+            <option label="C">A bicycle</option>
+            <option label="D">A light bulb</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Everyday Automation and AI</source_basis>
+    </question>
+    <question id="48">
+        <text>How can AI improve decision-making?</text>
+        <options>
+            <option label="A">By guessing randomly</option>
+            <option label="B">By analyzing large amounts of data quickly to find patterns</option>
+            <option label="C">By ignoring the data</option>
+            <option label="D">By asking a friend</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Everyday Automation and AI</source_basis>
+    </question>
+    <question id="49">
+        <text>How can AI help in healthcare?</text>
+        <options>
+            <option label="A">By replacing all doctors</option>
+            <option label="B">By assisting in diagnosis and analyzing medical images</option>
+            <option label="C">By making medicine taste better</option>
+            <option label="D">By scheduling appointments only</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Everyday Automation and AI</source_basis>
+    </question>
+    <question id="50">
+        <text>How can AI improve online services or apps?</text>
+        <options>
+            <option label="A">By making them slower</option>
+            <option label="B">By providing personalized recommendations and chatbots</option>
+            <option label="C">By removing features</option>
+            <option label="D">By increasing the price</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Everyday Automation and AI</source_basis>
+    </question>
+    <question id="51">
+        <text>What is one ethical concern about AI?</text>
+        <options>
+            <option label="A">It is too helpful</option>
+            <option label="B">Potential bias in decision making and privacy concerns</option>
+            <option label="C">It uses too much electricity</option>
+            <option label="D">It is too colorful</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Everyday Automation and AI</source_basis>
+    </question>
+    <question id="52">
+        <text>How can AI contribute to job displacement?</text>
+        <options>
+            <option label="A">By creating more jobs</option>
+            <option label="B">By automating tasks previously done by humans</option>
+            <option label="C">By hiring humans</option>
+            <option label="D">By reducing working hours</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Everyday Automation and AI</source_basis>
+    </question>
+    <question id="53">
+        <text>Why is data bias a problem in AI systems?</text>
+        <options>
+            <option label="A">It makes the AI slow</option>
+            <option label="B">It can lead to unfair or discriminatory outcomes</option>
+            <option label="C">It makes the data hard to read</option>
+            <option label="D">It is expensive to fix</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Everyday Automation and AI</source_basis>
+    </question>
+    <question id="54">
+        <text>Why might AI decisions need to be transparent?</text>
+        <options>
+            <option label="A">So we can see the code</option>
+            <option label="B">To build trust and understand how decisions are made</option>
+            <option label="C">To make it look cool</option>
+            <option label="D">To copy the logic</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Everyday Automation and AI</source_basis>
+    </question>
+    <question id="55">
+        <text>How can laws or regulations help manage AI risks?</text>
+        <options>
+            <option label="A">By stopping all AI research</option>
+            <option label="B">By setting standards for safety, fairness, and accountability</option>
+            <option label="C">By taxing AI companies only</option>
+            <option label="D">By ignoring the problem</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Everyday Automation and AI</source_basis>
+    </question>
+
+    <!-- Pseudocode and Flowcharts (56–70) -->
+    <question id="56">
+        <text>What is pseudocode?</text>
+        <options>
+            <option label="A">A specific programming language</option>
+            <option label="B">A high-level description of an algorithm using plain language</option>
+            <option label="C">A computer virus</option>
+            <option label="D">A hardware component</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Pseudocode and Flowcharts</source_basis>
+    </question>
+    <question id="57">
+        <text>Why is pseudocode written in plain language?</text>
+        <options>
+            <option label="A">So computers can read it</option>
+            <option label="B">To make it easy for humans to understand without syntax rules</option>
+            <option label="C">Because it is faster to type</option>
+            <option label="D">It is not written in plain language</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Pseudocode and Flowcharts</source_basis>
+    </question>
+    <question id="58">
+        <text>How does pseudocode help before actual coding?</text>
+        <options>
+            <option label="A">It compiles the code</option>
+            <option label="B">It helps plan the logic and structure of the program</option>
+            <option label="C">It finds syntax errors</option>
+            <option label="D">It creates the user interface</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Pseudocode and Flowcharts</source_basis>
+    </question>
+    <question id="59">
+        <text>What is a conditional statement in pseudocode?</text>
+        <options>
+            <option label="A">A loop</option>
+            <option label="B">A statement that performs an action based on a condition (e.g., IF...THEN)</option>
+            <option label="C">A variable declaration</option>
+            <option label="D">A comment</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Pseudocode and Flowcharts</source_basis>
+    </question>
+    <question id="60">
+        <text>Write a simple pseudocode condition that checks if score is greater than 50.</text>
+        <options>
+            <option label="A">CHECK score 50</option>
+            <option label="B">IF score > 50 THEN</option>
+            <option label="C">LOOP score > 50</option>
+            <option label="D">SET score = 50</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Pseudocode and Flowcharts</source_basis>
+    </question>
+    <question id="61">
+        <text>Which operator is used to represent “greater than or equal to” in pseudocode?</text>
+        <options>
+            <option label="A">></option>
+            <option label="B">>=</option>
+            <option label="C"><=</option>
+            <option label="D">=</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Pseudocode and Flowcharts</source_basis>
+    </question>
+    <question id="62">
+        <text>What does the pseudocode “IF age >= 18 THEN” mean?</text>
+        <options>
+            <option label="A">If age is exactly 18</option>
+            <option label="B">If age is greater than or equal to 18</option>
+            <option label="C">If age is less than 18</option>
+            <option label="D">Set age to 18</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Pseudocode and Flowcharts</source_basis>
+    </question>
+    <question id="63">
+        <text>What is an IF…THEN…ELSE structure used for?</text>
+        <options>
+            <option label="A">To repeat code</option>
+            <option label="B">To execute one block of code if true, and another if false</option>
+            <option label="C">To define a variable</option>
+            <option label="D">To stop the program</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Pseudocode and Flowcharts</source_basis>
+    </question>
+    <question id="64">
+        <text>What is a loop in pseudocode?</text>
+        <options>
+            <option label="A">A mistake in the code</option>
+            <option label="B">A structure that repeats a block of code</option>
+            <option label="C">A conditional statement</option>
+            <option label="D">A variable</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Pseudocode and Flowcharts</source_basis>
+    </question>
+    <question id="65">
+        <text>Why are loops useful in programs?</text>
+        <options>
+            <option label="A">They make the code longer</option>
+            <option label="B">They automate repetitive tasks efficiently</option>
+            <option label="C">They confuse the computer</option>
+            <option label="D">They are required for all programs</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Pseudocode and Flowcharts</source_basis>
+    </question>
+    <question id="66">
+        <text>Give an example of something that should repeat in a loop.</text>
+        <options>
+            <option label="A">Declaring a constant</option>
+            <option label="B">Processing a list of student grades</option>
+            <option label="C">Starting the program</option>
+            <option label="D">Ending the program</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Pseudocode and Flowcharts</source_basis>
+    </question>
+    <question id="67">
+        <text>What is a flowchart?</text>
+        <options>
+            <option label="A">A chart of water flow</option>
+            <option label="B">A visual diagram representing an algorithm or process</option>
+            <option label="C">A text document</option>
+            <option label="D">A pie chart</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Pseudocode and Flowcharts</source_basis>
+    </question>
+    <question id="68">
+        <text>Why are flowcharts useful in planning algorithms?</text>
+        <options>
+            <option label="A">They look pretty</option>
+            <option label="B">They help visualize the logic and flow of control</option>
+            <option label="C">They are executable code</option>
+            <option label="D">They replace the need for coding</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Pseudocode and Flowcharts</source_basis>
+    </question>
+    <question id="69">
+        <text>Why can’t flowcharts be run directly by the computer?</text>
+        <options>
+            <option label="A">They are images, not machine-readable code</option>
+            <option label="B">They are too complex</option>
+            <option label="C">Computers hate shapes</option>
+            <option label="D">They can be run directly</option>
+        </options>
+        <answer>A</answer>
+        <source_basis>Pseudocode and Flowcharts</source_basis>
+    </question>
+    <question id="70">
+        <text>What does it mean that flowcharts do not translate directly into executable code?</text>
+        <options>
+            <option label="A">They are useless</option>
+            <option label="B">A programmer must write the actual code based on the logic in the flowchart</option>
+            <option label="C">They are only for managers</option>
+            <option label="D">They are written in binary</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Pseudocode and Flowcharts</source_basis>
+    </question>
+
+    <!-- SDLC Basics (71–85) -->
+    <question id="71">
+        <text>What does SDLC stand for?</text>
+        <options>
+            <option label="A">System Design Logic Code</option>
+            <option label="B">Software Development Life Cycle</option>
+            <option label="C">Simple Data Life Cycle</option>
+            <option label="D">Software Design Loop Code</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>SDLC Basics</source_basis>
+    </question>
+    <question id="72">
+        <text>Why is a lifecycle model used for software development?</text>
+        <options>
+            <option label="A">To make it take longer</option>
+            <option label="B">To provide a structured approach to building high-quality software</option>
+            <option label="C">To avoid testing</option>
+            <option label="D">To confuse the client</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>SDLC Basics</source_basis>
+    </question>
+    <question id="73">
+        <text>What is the first stage of the SDLC?</text>
+        <options>
+            <option label="A">Testing</option>
+            <option label="B">Analysis / Requirements Gathering</option>
+            <option label="C">Coding</option>
+            <option label="D">Maintenance</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>SDLC Basics</source_basis>
+    </question>
+    <question id="74">
+        <text>What is the main purpose of the analysis stage?</text>
+        <options>
+            <option label="A">To write code</option>
+            <option label="B">To understand what the software needs to do and gather requirements</option>
+            <option label="C">To design the logo</option>
+            <option label="D">To sell the software</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>SDLC Basics</source_basis>
+    </question>
+    <question id="75">
+        <text>How does the analysis stage involve users?</text>
+        <options>
+            <option label="A">It doesn't</option>
+            <option label="B">By interviewing them to understand their needs</option>
+            <option label="C">By asking them to write code</option>
+            <option label="D">By asking them to pay upfront</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>SDLC Basics</source_basis>
+    </question>
+    <question id="76">
+        <text>What is done during the design stage?</text>
+        <options>
+            <option label="A">Coding the software</option>
+            <option label="B">Planning the system architecture, user interface, and logic</option>
+            <option label="C">Installing the software</option>
+            <option label="D">Fixing bugs</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>SDLC Basics</source_basis>
+    </question>
+    <question id="77">
+        <text>How are flowcharts and pseudocode used in the design stage?</text>
+        <options>
+            <option label="A">To test the code</option>
+            <option label="B">To model the logic and algorithms before coding</option>
+            <option label="C">To decorate the office</option>
+            <option label="D">They are not used</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>SDLC Basics</source_basis>
+    </question>
+    <question id="78">
+        <text>What happens in the implementation (coding) stage?</text>
+        <options>
+            <option label="A">The software is designed</option>
+            <option label="B">Programmers write the actual code for the software</option>
+            <option label="C">The software is sold</option>
+            <option label="D">The software is deleted</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>SDLC Basics</source_basis>
+    </question>
+    <question id="79">
+        <text>Why is careful coding important?</text>
+        <options>
+            <option label="A">To make it look nice</option>
+            <option label="B">To prevent bugs and ensure the software works correctly</option>
+            <option label="C">To use more lines of code</option>
+            <option label="D">To impress the boss</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>SDLC Basics</source_basis>
+    </question>
+    <question id="80">
+        <text>What is the main goal of the testing stage?</text>
+        <options>
+            <option label="A">To write documentation</option>
+            <option label="B">To identify and fix defects or bugs</option>
+            <option label="C">To market the product</option>
+            <option label="D">To install the software</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>SDLC Basics</source_basis>
+    </question>
+    <question id="81">
+        <text>What can happen if software is not properly tested?</text>
+        <options>
+            <option label="A">It will be perfect</option>
+            <option label="B">It may contain bugs, crash, or fail to meet requirements</option>
+            <option label="C">It will be cheaper</option>
+            <option label="D">Users will love it</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>SDLC Basics</source_basis>
+    </question>
+    <question id="82">
+        <text>What is the maintenance stage?</text>
+        <options>
+            <option label="A">The end of the project</option>
+            <option label="B">Ongoing support, updates, and bug fixes after release</option>
+            <option label="C">Cleaning the computer</option>
+            <option label="D">Hiring new staff</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>SDLC Basics</source_basis>
+    </question>
+    <question id="83">
+        <text>Why does software need maintenance after release?</text>
+        <options>
+            <option label="A">It doesn't</option>
+            <option label="B">To fix undiscovered bugs and adapt to new requirements</option>
+            <option label="C">To make more money</option>
+            <option label="D">To keep programmers busy</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>SDLC Basics</source_basis>
+    </question>
+    <question id="84">
+        <text>What is the documentation stage?</text>
+        <options>
+            <option label="A">Writing emails</option>
+            <option label="B">Creating manuals and technical guides for the software</option>
+            <option label="C">Signing contracts</option>
+            <option label="D">Filing taxes</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>SDLC Basics</source_basis>
+    </question>
+    <question id="85">
+        <text>Who uses the documentation created during the SDLC?</text>
+        <options>
+            <option label="A">Nobody</option>
+            <option label="B">Users, developers, and support staff</option>
+            <option label="C">Competitors</option>
+            <option label="D">The government</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>SDLC Basics</source_basis>
+    </question>
+
+    <!-- Testing, Documentation, and Impacts (86–100) -->
+    <question id="86">
+        <text>Why is the testing stage critical for software quality?</text>
+        <options>
+            <option label="A">It proves the code is long</option>
+            <option label="B">It ensures the software is reliable and meets user needs</option>
+            <option label="C">It is required by law</option>
+            <option label="D">It is fun</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Testing, Documentation, and Impacts</source_basis>
+    </question>
+    <question id="87">
+        <text>How does testing help find bugs?</text>
+        <options>
+            <option label="A">By looking at the code</option>
+            <option label="B">By running the software under various conditions to see if it fails</option>
+            <option label="C">By guessing</option>
+            <option label="D">By asking the user</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Testing, Documentation, and Impacts</source_basis>
+    </question>
+    <question id="88">
+        <text>How does testing protect users?</text>
+        <options>
+            <option label="A">It doesn't</option>
+            <option label="B">By preventing data loss, security breaches, and crashes</option>
+            <option label="C">By giving them a refund</option>
+            <option label="D">By making the software free</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Testing, Documentation, and Impacts</source_basis>
+    </question>
+    <question id="89">
+        <text>Why is it cheaper to fix bugs during testing than after release?</text>
+        <options>
+            <option label="A">Testers are unpaid</option>
+            <option label="B">Post-release fixes require patches, downtime, and damage control</option>
+            <option label="C">It is not cheaper</option>
+            <option label="D">Bugs disappear after release</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Testing, Documentation, and Impacts</source_basis>
+    </question>
+    <question id="90">
+        <text>How can testing verify that requirements are met?</text>
+        <options>
+            <option label="A">By checking if the software does what was specified in the analysis</option>
+            <option label="B">By asking the developer</option>
+            <option label="C">By checking the file size</option>
+            <option label="D">By checking the color scheme</option>
+        </options>
+        <answer>A</answer>
+        <source_basis>Testing, Documentation, and Impacts</source_basis>
+    </question>
+    <question id="91">
+        <text>What kinds of documents might be created during the documentation stage?</text>
+        <options>
+            <option label="A">Novels</option>
+            <option label="B">User manuals, technical specifications, and installation guides</option>
+            <option label="C">Shopping lists</option>
+            <option label="D">News articles</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Testing, Documentation, and Impacts</source_basis>
+    </question>
+    <question id="92">
+        <text>How does documentation help new developers?</text>
+        <options>
+            <option label="A">It gives them something to read</option>
+            <option label="B">It helps them understand the codebase and how the system works</option>
+            <option label="C">It confuses them</option>
+            <option label="D">It is not for developers</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Testing, Documentation, and Impacts</source_basis>
+    </question>
+    <question id="93">
+        <text>How does documentation help users of the software?</text>
+        <options>
+            <option label="A">It tells them how to install and use the features</option>
+            <option label="B">It tells them the history of computers</option>
+            <option label="C">It gives them free credits</option>
+            <option label="D">It does not help</option>
+        </options>
+        <answer>A</answer>
+        <source_basis>Testing, Documentation, and Impacts</source_basis>
+    </question>
+    <question id="94">
+        <text>Why is clear documentation important for future maintenance?</text>
+        <options>
+            <option label="A">It looks professional</option>
+            <option label="B">It ensures that future changes don't break existing functionality</option>
+            <option label="C">It increases the file size</option>
+            <option label="D">It is required by the internet</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Testing, Documentation, and Impacts</source_basis>
+    </question>
+    <question id="95">
+        <text>How does poor documentation affect a project?</text>
+        <options>
+            <option label="A">It makes it better</option>
+            <option label="B">It makes it difficult to maintain, use, and update</option>
+            <option label="C">It saves time</option>
+            <option label="D">It has no effect</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Testing, Documentation, and Impacts</source_basis>
+    </question>
+    <question id="96">
+        <text>What is nanotechnology in simple terms?</text>
+        <options>
+            <option label="A">Technology for giants</option>
+            <option label="B">Manipulation of matter on an atomic, molecular, and supramolecular scale</option>
+            <option label="C">Technology for space</option>
+            <option label="D">Old technology</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Testing, Documentation, and Impacts</source_basis>
+    </question>
+    <question id="97">
+        <text>Give one possible benefit of nanotechnology.</text>
+        <options>
+            <option label="A">Making things bigger</option>
+            <option label="B">Creating stronger, lighter materials and targeted drug delivery</option>
+            <option label="C">Creating more waste</option>
+            <option label="D">Slowing down computers</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Testing, Documentation, and Impacts</source_basis>
+    </question>
+    <question id="98">
+        <text>What is biotechnology in simple terms?</text>
+        <options>
+            <option label="A">Technology made of plants</option>
+            <option label="B">Technology that utilizes biological systems or living organisms</option>
+            <option label="C">Robots that look like animals</option>
+            <option label="D">Computer games about biology</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Testing, Documentation, and Impacts</source_basis>
+    </question>
+    <question id="99">
+        <text>Give one possible benefit of biotechnology for society.</text>
+        <options>
+            <option label="A">Creating new diseases</option>
+            <option label="B">Developing new medicines, vaccines, and sustainable agriculture</option>
+            <option label="C">Making food more expensive</option>
+            <option label="D">Reducing the population</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Testing, Documentation, and Impacts</source_basis>
+    </question>
+    <question id="100">
+        <text>Name one ethical or social concern about nanotechnology or biotechnology.</text>
+        <options>
+            <option label="A">They are too cheap</option>
+            <option label="B">Potential environmental risks or unintended consequences on health</option>
+            <option label="C">They are boring</option>
+            <option label="D">They are too slow</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>Testing, Documentation, and Impacts</source_basis>
     </question>
 </question_list>
-```
