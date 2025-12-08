@@ -1111,4 +1111,196 @@
         <answer>B</answer>
         <source_basis>Testing, Documentation, and Impacts</source_basis>
     </question>
+
+    <!-- Multiple Choice Questions from G9 Computer Science Midterms 2 (Q101-Q110) -->
+    <question id="101">
+        <text>What is the primary goal of automation in industries like manufacturing?</text>
+        <options>
+            <option label="A">To increase the need for human intervention.</option>
+            <option label="B">To improve efficiency and productivity by reducing manual labor.</option>
+            <option label="C">To decrease the precision and accuracy of production processes.</option>
+            <option label="D">To limit the flexibility of production and product design.</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>G9 Computer Science Midterms 2</source_basis>
+    </question>
+    <question id="102">
+        <text>Which of the following is NOT a common application of robotics in automation?</text>
+        <options>
+            <option label="A">Assembly line tasks</option>
+            <option label="B">Welding and painting</option>
+            <option label="C">Customer service interactions</option>
+            <option label="D">Material handling and packaging</option>
+        </options>
+        <answer>C</answer>
+        <source_basis>G9 Computer Science Midterms 2</source_basis>
+    </question>
+    <question id="103">
+        <text>What is the role of sensors in automated systems?</text>
+        <options>
+            <option label="A">To control the movement of robots.</option>
+            <option label="B">To collect data about the environment and provide feedback to the system.</option>
+            <option label="C">To process data and make decisions without human intervention.</option>
+            <option label="D">To display information to human operators.</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>G9 Computer Science Midterms 2</source_basis>
+    </question>
+    <question id="104">
+        <text>What is an advantage of using Computer Numerical Control (CNC) machines in manufacturing?</text>
+        <options>
+            <option label="A">Increased reliance on manual labor.</option>
+            <option label="B">Reduced production speed and efficiency.</option>
+            <option label="C">Increased precision and accuracy in producing complex parts.</option>
+            <option label="D">Limited flexibility in adapting to design changes.</option>
+        </options>
+        <answer>C</answer>
+        <source_basis>G9 Computer Science Midterms 2</source_basis>
+    </question>
+    <question id="105">
+        <text>What is a potential impact of automation on the workforce?</text>
+        <options>
+            <option label="A">Increased demand for low-skilled labor.</option>
+            <option label="B">Job displacement in certain sectors due to reduced need for human labor.</option>
+            <option label="C">Decreased productivity in industries.</option>
+            <option label="D">No significant impact on employment patterns.</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>G9 Computer Science Midterms 2</source_basis>
+    </question>
+    <question id="106">
+        <text>What is a key benefit of using Programmable Logic Controllers (PLCs) in automation?</text>
+        <options>
+            <option label="A">They require constant human intervention to function.</option>
+            <option label="B">They are inflexible and cannot be reprogrammed for different tasks.</option>
+            <option label="C">They can automate complex processes by controlling and monitoring machinery.</option>
+            <option label="D">They are only suitable for simple, repetitive tasks.</option>
+        </options>
+        <answer>C</answer>
+        <source_basis>G9 Computer Science Midterms 2</source_basis>
+    </question>
+    <question id="107">
+        <text>What is a concern related to the increasing use of automation in various industries?</text>
+        <options>
+            <option label="A">Reduced efficiency and productivity.</option>
+            <option label="B">Increased costs associated with implementing automation.</option>
+            <option label="C">Ethical considerations and potential impact on employment.</option>
+            <option label="D">Limited potential for innovation and technological advancements.</option>
+        </options>
+        <answer>C</answer>
+        <source_basis>G9 Computer Science Midterms 2</source_basis>
+    </question>
+    <question id="108">
+        <text>How can automation benefit small and medium-sized enterprises (SMEs)?</text>
+        <options>
+            <option label="A">By increasing operating costs and reducing competitiveness.</option>
+            <option label="B">By limiting production capacity and flexibility.</option>
+            <option label="C">By improving efficiency, productivity, and product quality, even with limited resources.</option>
+            <option label="D">By solely relying on manual labor and avoiding any technological advancements.</option>
+        </options>
+        <answer>C</answer>
+        <source_basis>G9 Computer Science Midterms 2</source_basis>
+    </question>
+    <question id="109">
+        <text>What is an example of automation in everyday life?</text>
+        <options>
+            <option label="A">Using a manual typewriter.</option>
+            <option label="B">Sending a telegram.</option>
+            <option label="C">Using a self-checkout kiosk at a grocery store.</option>
+            <option label="D">Listening to vinyl records.</option>
+        </options>
+        <answer>C</answer>
+        <source_basis>G9 Computer Science Midterms 2</source_basis>
+    </question>
+    <question id="110">
+        <text>Which of the following pseudocode statements correctly represents a conditional statement that checks if a variable age is greater than or equal to 18?</text>
+        <options>
+            <option label="A">IF age > 18 THEN</option>
+            <option label="B">IF age >= 18 THEN</option>
+            <option label="C">INPUT age >= 18</option>
+            <option label="D">OUTPUT age > 18</option>
+        </options>
+        <answer>B</answer>
+        <source_basis>G9 Computer Science Midterms 2</source_basis>
+    </question>
+    <question id="111">
+        <text>Flowcharts do not directly translate into ________ code.</text>
+        <options>
+            <option label="A">executable</option>
+            <option label="B">functional</option>
+            <option label="C">interpretive</option>
+            <option label="D">dynamic</option>
+        </options>
+        <answer>A</answer>
+        <source_basis>G9 Computer Science Midterms 2</source_basis>
+    </question>
+    <question id="112">
+        <text>The main goal of the ________ stage in the SDLC is to ensure the program continues to function correctly and meet user needs.</text>
+        <options>
+            <option label="A">Maintenance</option>
+            <option label="B">Testing</option>
+            <option label="C">Development</option>
+            <option label="D">Analysis</option>
+        </options>
+        <answer>A</answer>
+        <source_basis>G9 Computer Science Midterms 2</source_basis>
+    </question>
+    <question id="113">
+        <text>________ is a conditional statement in pseudocode.</text>
+        <options>
+            <option label="A">If...Then...Else</option>
+            <option label="B">Loop</option>
+            <option label="C">Function</option>
+            <option label="D">Variable</option>
+        </options>
+        <answer>A</answer>
+        <source_basis>G9 Computer Science Midterms 2</source_basis>
+    </question>
+    <question id="114">
+        <text>A loop structure in a flowchart or pseudocode represents a set of ________ that are repeated multiple times.</text>
+        <options>
+            <option label="A">instructions</option>
+            <option label="B">conditions</option>
+            <option label="C">variables</option>
+            <option label="D">functions</option>
+        </options>
+        <answer>A</answer>
+        <source_basis>G9 Computer Science Midterms 2</source_basis>
+    </question>
+    <question id="115">
+        <text>The first stage in the software development lifecycle (SDLC) is ________.</text>
+        <options>
+            <option label="A">analysis</option>
+            <option label="B">design</option>
+            <option label="C">implementation</option>
+            <option label="D">testing</option>
+        </options>
+        <answer>A</answer>
+        <source_basis>G9 Computer Science Midterms 2</source_basis>
+    </question>
+    <question id="116">
+        <text>Describe the potential benefits and challenges of using Artificial Intelligence (AI) in various applications.</text>
+        <answer>Open-ended response required</answer>
+        <source_basis>G9 Computer Science Midterms 2</source_basis>
+    </question>
+    <question id="117">
+        <text>Explain how robotics and automation are impacting the manufacturing industry.</text>
+        <answer>Open-ended response required</answer>
+        <source_basis>G9 Computer Science Midterms 2</source_basis>
+    </question>
+    <question id="118">
+        <text>Discuss the potential implications of emerging technologies like nanotechnology and biotechnology for society.</text>
+        <answer>Open-ended response required</answer>
+        <source_basis>G9 Computer Science Midterms 2</source_basis>
+    </question>
+    <question id="119">
+        <text>Why is the testing stage crucial in the Software Development Lifecycle?</text>
+        <answer>Open-ended response required</answer>
+        <source_basis>G9 Computer Science Midterms 2</source_basis>
+    </question>
+    <question id="120">
+        <text>Describe the purpose of the documentation stage in the Software Development Lifecycle.</text>
+        <answer>Open-ended response required</answer>
+        <source_basis>G9 Computer Science Midterms 2</source_basis>
+    </question>
 </question_list>
